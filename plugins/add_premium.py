@@ -46,9 +46,9 @@ async def myplan(client, message):
         minutes, seconds = divmod(remainder, 60)
 
         time_left_str = f"{days} days, {hours} hours, {minutes} minutes"
-        await message.reply_text(f"<blockquote><b>⚡ ᴄᴜʀʀᴇɴᴛ ᴘʟᴀɴ ᴅᴇᴛᴀɪʟꜱ ⚡\n\nᴛɪᴍᴇ ʟᴇꜰᴛ - {time_left_str}\nᴇxᴘɪʀᴇ ᴛɪᴍᴇ - {expiry_str_in_ist}</b></blockquote>", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Uᴘɢʀᴀᴅᴇ", url="https://t.me/TheHappyHourBot?start=TheHappyHour"), InlineKeyboardButton("Cʟᴏsᴇ ❌", callback_data="close_data")]])) 
+        await message.reply_text(f"<blockquote><b>⚡ Group ⚡\n\nᴛɪᴍᴇ ʟᴇꜰᴛ - {time_left_str}\nᴇxᴘɪʀᴇ ᴛɪᴍᴇ - {expiry_str_in_ist}</b></blockquote>", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Uᴘɢʀᴀᴅᴇ", url="https://t.me/TheHappyHourBot?start=TheHappyHour"), InlineKeyboardButton("Cʟᴏsᴇ ❌", callback_data="close_data")]])) 
     else:
-        await message.reply_text(f"<b><blockquote>आपने कोई प्रीमियम प्लान Buy नई किया...😒\n\nप्रीमियम प्लान Buy करने के \nलिऐ /premium पर क्लिक करें ‼️</blockquote></b>")
+        await message.reply_text(f"<b><blockquote>@thewarriorsreal</blockquote></b>")
 
 @Client.on_message(filters.command("add_premium") & filters.user(ADMINS))
 async def give_premium_cmd_handler(client, message):
@@ -82,11 +82,11 @@ async def allplans(bot, message):
     btn = [[
             InlineKeyboardButton('🎁 ᴄʜᴇᴄᴋ ᴘʟᴀɴs 🎁', callback_data='check'), 
         ],[
-            InlineKeyboardButton('ʜᴏᴡ ɪᴛs ᴡᴏʀᴋ', url="https://graph.org/The-Happy-Hour-12-22-2"),
+            InlineKeyboardButton('ʜᴏᴡ ɪᴛs ᴡᴏʀᴋ', url="https://graph.org/Request-Format-02-22-2"),
             InlineKeyboardButton('cʟᴏꜱᴇ', callback_data='close_data')
         ]]
     await message.reply_photo(
-        photo="https://telegra.ph/file/71be8b45fd8da04a6531c.jpg",
+        photo="https://te.legra.ph/file/e883c4a1e58c241d5565c.jpg",
         caption="<blockquote><b>🔥 Pʀᴇᴍɪᴜᴍ Uꜱᴇʀ Fᴜᴛᴜʀᴇ 🔥\n\n☞ आप प्रीमियम user हैं तो आपको वेरीफिकेशन नई करना पड़ेगा ।\n☞ डायरेक्ट मूवी का फाइल ही मिलेगा ।\n☞ आपको फास्ट डाउनलोड लिंक & ऑनलाइन स्ट्रीम कि लिंक भी use सकते हे ।\n☞ बहुत सारे प्लेयर में ओनलाइन मूवी देख सकते है ।\n☞ आप अनलिमिटेड मूवी ले सकतें है।\n☞ कोई प्रकार का AD शो नई होगा।\n☞ एडमिन की तरफ से पूरा सपोर्ट मिलेगा ।\n☞ अगर कोई प्रॉबलम आता है तो ऐडमिन उसे जल्द ही सॉल्व कर देगे ।\n\n🔥 Pʀᴇᴍɪᴜᴍ Uꜱᴇʀ Fᴜᴛᴜʀᴇ 🔥\n\n○ ɴᴏ ɴᴇᴇᴅ ᴛᴏ ᴠᴇʀɪғʏ\n○ ᴅɪʀᴇᴄᴛ ғɪʟᴇs\n○ ᴀᴅ-ғʀᴇᴇ ᴇxᴘᴇʀɪᴇɴᴄᴇ\n○ ʜɪɢʜ-sᴘᴇᴇᴅ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ\n○ ᴍᴜʟᴛɪ-ᴘʟᴀʏᴇʀ sᴛʀᴇᴀᴍɪɴɢ ʟɪɴᴋs\n○ ᴜɴʟɪᴍɪᴛᴇᴅ ᴍᴏᴠɪᴇs & sᴇʀɪᴇs\n○ ꜰᴜʟʟ ᴀᴅᴍɪɴ sᴜᴘᴘᴏʀᴛ\n○ ʀᴇǫᴜᴇsᴛ ᴡɪʟʟ ʙᴇ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ɪɴ 1ʜ ɪꜰ ᴀᴠᴀɪʟᴀʙʟᴇ\n\n--> Cʀᴇᴀᴛᴇᴅ Bʏ Tʜᴇ Hᴀᴘᴘʏ Hᴏᴜʀ</b></blockquote>",
         reply_markup=InlineKeyboardMarkup(btn)
     )
@@ -94,24 +94,19 @@ async def allplans(bot, message):
 @Client.on_message(filters.private & filters.command("premium"))
 async def allplan(bot, message):
     btn = [[
-            InlineKeyboardButton('📸 sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ 📸', url="https://t.me/Master_Jiraya_Bot")
+            InlineKeyboardButton('📸 sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ 📸', url="https://t.me/thewarriorsreal")
         ],[
-            InlineKeyboardButton('☘️ ꜰᴜᴛᴜʀᴇ ☘️', url="https://graph.org/The-Happy-Hour-12-22-2"),
+            InlineKeyboardButton('☘️ ꜰᴜᴛᴜʀᴇ ☘️', url="https://graph.org/Request-Format-02-22-2"),
             InlineKeyboardButton('cʟᴏꜱᴇ', callback_data='close_data')
         ]]
     await message.reply_photo(
-        photo="https://telegra.ph/file/71be8b45fd8da04a6531c.jpg",
+        photo="https://te.legra.ph/file/e883c4a1e58c241d5565c.jpg",
         caption="""<blockquote><b>
-        <a href='https://graph.org/The-Happy-Hour-12-22-2'>💥 ᴘʀᴇᴍɪᴜᴍ ᴘʀɪᴄᴇ 💥
+        <a href='@thewarriorsreal'>💥 ᴘʀᴇᴍɪᴜᴍ Free 💥
         
-1 Wᴇᴇᴋ = [50 + 0] Rs
-1 Mᴏɴᴛʜ = [50 + 10] Rs
-2 Mᴏɴᴛʜ = [50 + 30] Rs
-3 Mᴏɴᴛʜ = [50 + 50] Rs
-6 Mᴏɴᴛʜ = [50 + 100] Rs
-1 Yᴇᴀʀ = [50 + 150] Rs
+Good, Evil I reject them both 
+        - Garou
 
-⚡ᴄʜᴀᴄᴋ ᴘʀᴇᴍɪᴜᴍ ꜰᴜᴛᴜʀᴇꜱ
 ㅤㅤㅤㅤㅤ</a></b></blockquote>""",
         reply_markup=InlineKeyboardMarkup(btn)
     )
