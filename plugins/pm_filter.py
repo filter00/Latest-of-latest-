@@ -993,8 +993,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             reply_markup=InlineKeyboardMarkup(
                                 [
                                 [
-                                InlineKeyboardButton("🖥️ ᴏɴʟɪɴᴇ ᴡᴀᴛᴄʜ / ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ 📥", callback_data=f"stream#{file_id}")
-                            ],[
                     InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/thewarriorsreal')
                     ]
                                 ]
@@ -1069,8 +1067,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                  InlineKeyboardButton("Join Channel", url='t.me/defenderofthemultiverse')
-               ],[
                     InlineKeyboardButton('🇮🇳 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🇮🇳', url='t.me/thewarriorsreal')
                     ]
                 ]
