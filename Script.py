@@ -1,25 +1,21 @@
 class script(object):
     START_TXT = """<b><blockquote>
-Mʏ Nᴀᴍᴇ Is #Minato, I Cᴀɴ Pʀᴏᴠɪᴅᴇ Mᴏᴠɪᴇs</blockquote></b>"""
+Mʏ Nᴀᴍᴇ Is {user}, I Cᴀɴ Pʀᴏᴠɪᴅᴇ Mᴏᴠɪᴇs</blockquote></b>"""
 
     HELP_TXT = """<b><blockquote>Hᴇʏ {}
 Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b></blockquote>"""
 
     ABOUT_TXT = """<b><blockquote>✯ Mʏ Nᴀᴍᴇ: {}
-✯ Cʀᴇᴀᴛᴏʀ: <a href='https://t.me/ANKIT3690'>Ankit</a>
-✯ Lɪʙʀᴀʀʏ: <a href='https://t.me/ANKIT3690'>Pʏʀᴏɢʀᴀᴍ</a>
-✯ Lᴀɴɢᴜᴀɢᴇ: Pʏᴛʜᴏɴ 3
-✯ DᴀᴛᴀBᴀsᴇ: MᴏɴɢᴏDB
-✯ Bᴏᴛ Sᴇʀᴠᴇʀ: Vs Code Live Server
+✯ Owner: <a href='https://t.me/ANKIT3690'>Ankit</a>
+✯ Owner: <a href='https://t.me/ANKIT3690'>Saurav</a>
 ✯ Bᴜɪʟᴅ Sᴛᴀᴛᴜs: #Offline</blockquote></b>"""
 
     SOURCE_TXT = """<b><blockquote>ɴᴏᴛᴇ:
-- ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ᴀɴ ᴏᴘᴇɴ ꜱᴏᴜʀᴄᴇ ᴘʀᴏᴊᴇᴄᴛ.
-- Repo link - <a href="https://graph.org/The-Happy-Hour-12-28">Click Here</a></blockquote></b>"""
+- <a href="https://graph.org/animecoa">Anime Life</a></blockquote></b>"""
 
 
     KUSHAL_TXT = """ 
-<b><blockquote>🔥 ᴘʀᴇᴍɪᴜᴍ ғᴇᴀᴛᴜʀᴇs 🔥
+<b><blockquote>🔥 
 
 ➻ ɴᴏ ɴᴇᴇᴅ ᴛᴏ ᴠᴇʀɪғʏ
 ➻ ᴅɪʀᴇᴄᴛ ғɪʟᴇs
@@ -27,14 +23,8 @@ Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b></blockquote>""
 ➻ ʜɪɢʜ-sᴘᴇᴇᴅ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ
 ➻ ᴜɴʟɪᴍɪᴛᴇᴅ ᴍᴏᴠɪᴇs / sᴇʀɪᴇs
 ➻ ғᴜʟʟ ᴀᴅᴍɪɴ sᴜᴘᴘᴏʀᴛ 
-
-➻ वेरिफाई नई करना होगा
-➻ किसी प्रकार का ᴀᴅ शो नई होगा
-➻ डायरेक्ट मूवी फाइल 
-➻ ऑनलाइन स्ट्रीम लिंक 
-➻ फास्ट डाउनलोड लिंक 
-➻ ऐडमिन कि तरफ से पूरा सपोर्ट
-➻ Req Complete in 1D
+     @thewarriorsreal
+Premium Plan ab tak start nahi hua hai, sab free hai!
 
 👇 ᴄʜᴀᴄᴋ ᴀʟʟ ᴘʟᴀɴꜱ 👇</blockquote>
 </b>"""
@@ -132,13 +122,13 @@ Aᴅᴅᴇᴅ Bʏ - {}"""
 ID - <code>{}</code>
 Nᴀᴍᴇ - {}"""
 
-    ALRT_TXT = """Don't Click Other Result...😡"""
+    ALRT_TXT = """Don't Click On Other Result...😡 @animecoa"""
 
     OLD_ALRT_TXT = """
 ʏᴏᴜ ᴀʀᴇ ᴜꜱɪɴɢ ᴏɴᴇ ᴏꜰ ᴍʏ ᴏʟᴅ ᴍᴇꜱꜱᴀɢᴇꜱ, 
 ᴘʟᴇᴀꜱᴇ ꜱᴇɴᴅ ᴛʜᴇ ʀᴇQᴜᴇꜱᴛ ᴀɢᴀɪɴ."""
 
-    CUDNT_FND = """<blockquote>Select True Name...!!!</blockquote>"""
+    CUDNT_FND = """<blockquote>Select Correct Name...!!!</blockquote>"""
 
     I_CUDNT = """<b><blockquote>Sᴇᴀʀᴄʜ Mᴏᴠɪᴇ Wɪᴛʜ Cᴏʀʀᴇᴄᴛ Sᴘᴇʟʟɪɴɢ :
 
@@ -158,7 +148,7 @@ Sᴇᴀʀᴄʜ Wᴇʙ Sᴇʀɪᴇs Iɴ ᴛʜɪs Fᴏʀᴍᴀᴛᴇ :
 🔹 ᴅᴏɴ'ᴛ sᴇɴᴅ ᴀɴʏ ᴋɪɴᴅ ᴏғ ᴘʜᴏᴛᴏ, ᴠɪᴅᴇᴏ ᴅᴏᴄᴜᴍᴇɴᴛs, ᴜʀʟ ᴇᴛᴄ...</blockquote></b>"""
 
     I_CUD_NT = """ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ.
-ᴘʟᴇᴀꜱᴇ ᴄʜᴇᴄᴋ ᴛʜᴇ ꜱᴘᴇʟʟɪɴɢ..."""
+ᴘʟᴇᴀꜱᴇ ᴄʜᴇᴄᴋ ᴛʜᴇ ꜱᴘᴇʟʟɪɴɢ.. @animecoa"""
 
     MVE_NT_FND = """ᴍᴏᴠɪᴇ ɴᴏᴛ ꜰᴏᴜɴᴅ ɪɴ ᴅᴀᴛᴀʙᴀꜱᴇ..."""
 
@@ -169,8 +159,8 @@ Sᴇᴀʀᴄʜ Wᴇʙ Sᴇʀɪᴇs Iɴ ᴛʜɪs Fᴏʀᴍᴀᴛᴇ :
     OWNER_INFO = """
 <b>⍟───[ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ ]───⍟
     
-• ꜰᴜʟʟ ɴᴀᴍᴇ : Master Jiraya
-• ᴘᴇʀᴍᴀɴᴇɴᴛ ᴅᴍ ʟɪɴᴋ : <a href='t.me/Master_Jiraya_Bot'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a></b>"""
+• ꜰᴜʟʟ ɴᴀᴍᴇ : ANKIT
+• ᴘᴇʀᴍᴀɴᴇɴᴛ ᴅᴍ ʟɪɴᴋ : <a href='t.me/animecoa'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a></b>"""
 
     REQINFO = """
 ⚠ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ⚠
@@ -181,14 +171,18 @@ Sᴇᴀʀᴄʜ Wᴇʙ Sᴇʀɪᴇs Iɴ ᴛʜɪs Fᴏʀᴍᴀᴛᴇ :
 
     MINFO = """
 ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
-ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ
-⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
+Requesting like this leads to wait for a while
+Eg: 
+1. Avengers Infinity War Movie 
+ (❌This Is The Wrong Way)
+"Movie" Don't add this word.
+2. Avengers Infinity War 
+(✅Correct Way to request)
 
-ɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ
+Don't either write word movie, quality nor language.
 
-ᴇxᴀᴍᴘʟᴇ : Uncharted
-
-🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)"""
+हिंदी अनुवाद
+https://graph.org/Request-Format-02-22-2"""
 
     SINFO = """
 ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯
@@ -210,7 +204,7 @@ Sᴇᴀʀᴄʜ Wᴇʙ Sᴇʀɪᴇs Iɴ ᴛʜɪs Fᴏʀᴍᴀᴛᴇ :
 
 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 <b>: {}</b>"""
 
-    CAPTION = """<b><blockquote><a href="https://t.me/defenderofthemultiverse">{file_name}</a></blockquote></b>"""
+    CAPTION = """<b><blockquote><a href="https://t.me/defenderofthemultiverse">{file_caption} Join:@animecoa </a></blockquote></b>"""
 
     IMDB_TEMPLATE_TXT = """
 <b><blockquote>
@@ -244,8 +238,8 @@ Aᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs:
 • /plink - <code>Jᴜsᴛ ʟɪᴋᴇ /link, ʙᴜᴛ ᴛʜᴇ ғɪʟᴇ ᴡɪʟʟ ʙᴇ sᴇɴᴅ ᴡɪᴛʜ ғᴏʀᴡᴀʀᴅ ʀᴇsᴛʀɪᴄᴛɪᴏɴ.</code>"""
 
     CHECK_TXT = """<blockquote>
-<b><a href='https://graph.org/The-Happy-Hour-12-22-2'>💥 ᴘʀᴇᴍɪᴜᴍ ᴘʀɪᴄᴇ 💥
-
+<b><a href='t.me/thewarriorsreal'>💥 ᴘʀᴇᴍɪᴜᴍ ᴘʀɪᴄᴇ 💥
+ab tak start nahi hua hai, free hai 1
 1 Wᴇᴇᴋ = [50 + 0] Rs
 1 Mᴏɴᴛʜ = [50 + 10] Rs
 2 Mᴏɴᴛʜ = [50 + 30] Rs
