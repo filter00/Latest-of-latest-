@@ -13,9 +13,9 @@ def is_enabled(value, default):
 
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
-API_ID = int(environ.get('API_ID', '20678315'))
-API_HASH = environ.get('API_HASH', '5522342962f32f8fb46903effb5ce41f')
-BOT_TOKEN = environ.get('BOT_TOKEN', "6350375829:AAFRf0h_tUDhYNg3ekLacnhB3A6SV9lKqFE")
+API_ID = int(environ.get('API_ID', '12512870'))
+API_HASH = environ.get('API_HASH', '01e4639ae903f5d4a7b0876e5a3ea0a1')
+BOT_TOKEN = environ.get('BOT_TOKEN', "5064940449:AAF71BDYci7HkF98cjMFaSvtmN_tHZH2Ks4")
 TIMEZONE = environ.get("TIMEZONE", "Asia/Kolkata")
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 150))
@@ -29,9 +29,9 @@ SPELL_IMG = environ.get("SPELL_IMG", "https://graph.org/file/54c916b164355510097
 STREAM_MODE = is_enabled((environ.get('STREAM_MODE', "false")), False)
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1991522624 1197918807').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1991522624 1197918807 1774994845 1320867884').split()]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001954637243 -1001519696446 -1001736667926 -1001954637243').split()]
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
+auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '1197918807 1320867884 1774994845').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL', '-1001648653483')
 auth_grp = environ.get('AUTH_GROUP')
@@ -51,15 +51,15 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 premium = environ.get('PREMIUM_LOGS', '-1001424329361')
 PREMIUM_LOGS = int(premium) if premium and id_pattern.search(premium) else None
 
-IMPORT_JK_SITE = environ.get('IMPORT_JK_SITE', 'goo.aslink.in')
-IMPORT_JK_API = environ.get('IMPORT_JK_API', 'c5ecbd7b5e088fd1c8b755f331d055c27d3b2fa7')
+IMPORT_JK_SITE = environ.get('IMPORT_JK_SITE', 'zipshort.net')
+IMPORT_JK_API = environ.get('IMPORT_JK_API', 'e32e3d18cfc2e9e9818a9dee5cd2b1aaf3d4f21c')
 SHORT_MODE = is_enabled((environ.get("SHORT_MODE","False")), False)
 
 # Others
-IS_VERIFY = is_enabled((environ.get('IS_VERIFY', 'False')), False)
-HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', "https://t.me/Niko_Roben")
-VERIFY2_URL = environ.get('VERIFY2_URL', "goo.aslink.in")
-VERIFY2_API = environ.get('VERIFY2_API', "c5ecbd7b5e088fd1c8b755f331d055c27d3b2fa7")
+IS_VERIFY = is_enabled((environ.get('IS_VERIFY', 'True')), False)
+HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', "https://t.me/tutorialcoa")
+VERIFY2_URL = environ.get('VERIFY2_URL', "zipshort.net")
+VERIFY2_API = environ.get('VERIFY2_API', "e32e3d18cfc2e9e9818a9dee5cd2b1aaf3d4f21c")
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'goo.aslink.in')
 SHORTLINK_API = environ.get('SHORTLINK_API', 'c5ecbd7b5e088fd1c8b755f331d055c27d3b2fa7')
 IS_SHORTLINK = is_enabled((environ.get('IS_SHORTLINK', 'False')), False)
