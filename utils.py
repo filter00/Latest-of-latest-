@@ -42,7 +42,7 @@ class temp(object):
     BANNED_CHATS = []
     LAZY_VERIFIED_CHATS = []
     ME = None
-    CURRENT=int(os.environ.get("SKIP", 2))
+    CURRENT=int(os.environ.get("SKIP", 1))
     CANCEL = False
     MELCOW = {}
     U_NAME = None
@@ -708,7 +708,7 @@ async def send_all(bot, userid, files, ident):
             ]]
         await bot.send_message(
             chat_id=userid,
-            text="𝗙𝗶𝗿𝘀𝘁 𝗝𝗼𝗶𝗻 𝗠𝘆 𝗖𝗵𝗮𝗻𝗻𝗲𝗹....🫤\n\n𝗔𝗳𝘁𝗲𝗿 𝗚𝗲𝘁 𝗨𝗻𝗹𝗶𝗺𝗶𝘁𝗲𝗱 𝗠𝗼𝘃𝗶𝗲....😉",
+            text="𝗙𝗶𝗿𝘀𝘁 𝗝𝗼𝗶𝗻 𝗠𝘆 𝗖𝗵𝗮𝗻𝗻𝗲𝗹....🫤\n\n𝗔𝗳𝘁𝗲𝗿 then 𝗚𝗲𝘁 𝗨𝗻𝗹𝗶𝗺𝗶𝘁𝗲𝗱 𝗠𝗼𝘃𝗶𝗲....😉",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.MARKDOWN
             )
@@ -760,11 +760,11 @@ async def send_all(bot, userid, files, ident):
             InlineKeyboardButton("Vᴇʀɪғʏ", url=await get_token(bot, userid, f"https://telegram.me/{temp.U_NAME}?start=", 'send_all')),
             InlineKeyboardButton("Hᴏᴡ Tᴏ Vᴇʀɪғʏ", url=HOW_TO_VERIFY)
         ],[
-            InlineKeyboardButton("⛥ ʀᴇᴍᴏᴠᴇ ᴠᴇʀɪꜰɪᴄᴀᴛɪᴏɴ ⛥", url="https://t.me/TheHappyHourBOT?start=TheHappyHour")
+            InlineKeyboardButton("⛥ ʀᴇᴍᴏᴠᴇ ᴠᴇʀɪꜰɪᴄᴀᴛɪᴏɴ ⛥", url="https://t.me/tutorialcoa")
           ]]
         await bot.send_message(
             chat_id=userid,
-            text="<b>हर दो दिन में 10 सेकंड का वेरिफिकेशन \nजरूरी हे !\n\nJust 10 second Bro 🥲\n\nAfter Get Unlimited Movies...✅</b>",
+            text="<b>हर दो दिन में 10 सेकंड का वेरिफिकेशन \nजरूरी हे !\n\nJust 10 second Bro 🥲\n\nAfter then Get Unlimited Movies...✅</b>",
             protect_content=True if PROTECT_CONTENT else False,
             reply_markup=InlineKeyboardMarkup(btn)
         )
