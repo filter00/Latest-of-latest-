@@ -1558,7 +1558,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto("https://graph.org/file/18154fad06450efdbc2a9.jpg")
+            InputMediaPhoto("https://te.legra.ph/file/e883c4a1e58c241d5565c.jpg")
         ) 
         await query.message.edit_text(
             text=script.PLAN1_TXT,
@@ -1567,9 +1567,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ) 
     elif query.data == "plan2":
         buttons = [[
-            InlineKeyboardButton('📸 sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ 📸', url="https://t.me/Master_Jiraya_Bot")
+            InlineKeyboardButton('📸 sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ 📸', url="https://t.me/ANKIT3690")
         ],[
-            InlineKeyboardButton('☘️ ꜰᴜᴛᴜʀᴇ ☘️', url="https://graph.org/The-Happy-Hour-12-22-2"),
+            InlineKeyboardButton('☘️ ꜰᴜᴛᴜʀᴇ ☘️', url="https://graph.org/Request-Format-02-22-2"),
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='check')             
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1585,7 +1585,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto("https://graph.org/file/18154fad06450efdbc2a9.jpg")
+            InputMediaPhoto("https://te.legra.ph/file/e883c4a1e58c241d5565c.jpg")
         ) 
         await query.message.edit_text(
             text=script.PLAN2_TXT,
@@ -1594,9 +1594,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ) 
     elif query.data == "plan3":
         buttons = [[
-            InlineKeyboardButton('📸 sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ 📸', url="https://t.me/Master_Jiraya_Bot")
+            InlineKeyboardButton('📸 sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ 📸', url="https://t.me/ANKIT3690")
         ],[
-            InlineKeyboardButton('☘️ ꜰᴜᴛᴜʀᴇ ☘️', url="https://graph.org/The-Happy-Hour-12-22-2"),
+            InlineKeyboardButton('☘️ ꜰᴜᴛᴜʀᴇ ☘️', url="https://graph.org/Request-Format-02-22-2"),
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='check')             
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1612,7 +1612,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto("https://graph.org/file/18154fad06450efdbc2a9.jpg")
+            InputMediaPhoto("https://te.legra.ph/file/e883c4a1e58c241d5565c.jpg")
         ) 
         await query.message.edit_text(
             text=script.PLAN3_TXT,
