@@ -1487,7 +1487,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('🎁 ᴄʜᴇᴄᴋ ᴘʟᴀɴs 🎁', callback_data='check'), 
         ],[
-            InlineKeyboardButton('☘️ ꜰᴜᴛᴜʀᴇ ☘️', url="https://graph.org/The-Happy-Hour-12-22-2"),
+            InlineKeyboardButton('☘️ ꜰᴜᴛᴜʀᴇ ☘️', url="https://graph.org/Request-Format-02-22-2"),
             InlineKeyboardButton('cʟᴏꜱᴇ', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1503,7 +1503,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto("https://graph.org/file/322b2512f1ceaf9094abb.jpg")
+            InputMediaPhoto("https://te.legra.ph/file/e883c4a1e58c241d5565c.jpg")
         ) 
         await query.message.edit_text(
             text=script.KUSHAL_TXT,
