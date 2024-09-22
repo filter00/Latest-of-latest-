@@ -51,17 +51,17 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 premium = environ.get('PREMIUM_LOGS', '-1001424329361')
 PREMIUM_LOGS = int(premium) if premium and id_pattern.search(premium) else None
 
-IMPORT_JK_SITE = environ.get('IMPORT_JK_SITE', 'zipshort.net')
-IMPORT_JK_API = environ.get('IMPORT_JK_API', 'e32e3d18cfc2e9e9818a9dee5cd2b1aaf3d4f21c')
+IMPORT_JK_SITE = environ.get('IMPORT_JK_SITE', 'tnshort.net')
+IMPORT_JK_API = environ.get('IMPORT_JK_API', 'b69d47b59c434bd2c1e3455b8fbf5222cf3cecef')
 SHORT_MODE = is_enabled((environ.get("SHORT_MODE","False")), False)
 
 # Others
 IS_VERIFY = is_enabled((environ.get('IS_VERIFY', 'True')), False)
 HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', "https://t.me/tutorialcoa")
-VERIFY2_URL = environ.get('VERIFY2_URL', "zipshort.net")
-VERIFY2_API = environ.get('VERIFY2_API', "e32e3d18cfc2e9e9818a9dee5cd2b1aaf3d4f21c")
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'zipshort.net')
-SHORTLINK_API = environ.get('SHORTLINK_API', 'e32e3d18cfc2e9e9818a9dee5cd2b1aaf3d4f21c')
+VERIFY2_URL = environ.get('VERIFY2_URL', "tnshort.net")
+VERIFY2_API = environ.get('VERIFY2_API', "b69d47b59c434bd2c1e3455b8fbf5222cf3cecef")
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'tnshort.net')
+SHORTLINK_API = environ.get('SHORTLINK_API', 'b69d47b59c434bd2c1e3455b8fbf5222cf3cecef')
 IS_SHORTLINK = is_enabled((environ.get('IS_SHORTLINK', 'False')), False)
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "7")
