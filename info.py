@@ -45,23 +45,23 @@ NO_RESULTS_MSG = is_enabled((environ.get("NO_RESULTS_MSG", 'False')), False)
 
 # MongoDB information
 DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://onlyforusetstuffs:UnUs4apCsOVNvB9q@cluster0.sonvu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-DATABASE_NAME = environ.get('DATABASE_NAME', "Short Neweww")
+DATABASE_NAME = environ.get('DATABASE_NAME', "ANKIT")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 premium = environ.get('PREMIUM_LOGS', '-1001424329361')
 PREMIUM_LOGS = int(premium) if premium and id_pattern.search(premium) else None
 
-IMPORT_JK_SITE = environ.get('IMPORT_JK_SITE', 'tnshort.net')
-IMPORT_JK_API = environ.get('IMPORT_JK_API', 'b69d47b59c434bd2c1e3455b8fbf5222cf3cecef')
+IMPORT_JK_SITE = environ.get('IMPORT_JK_SITE', 'modijiurl.com')
+IMPORT_JK_API = environ.get('IMPORT_JK_API', '2c340832a9962ff40aa7e91a7f9b035dc7fe8c78')
 SHORT_MODE = is_enabled((environ.get("SHORT_MODE","False")), False)
 
 # Others
 IS_VERIFY = is_enabled((environ.get('IS_VERIFY', 'True')), False)
 HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', "https://t.me/tutorialcoa")
-VERIFY2_URL = environ.get('VERIFY2_URL', "tnshort.net")
-VERIFY2_API = environ.get('VERIFY2_API', "b69d47b59c434bd2c1e3455b8fbf5222cf3cecef")
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'tnshort.net')
-SHORTLINK_API = environ.get('SHORTLINK_API', 'b69d47b59c434bd2c1e3455b8fbf5222cf3cecef')
+VERIFY2_URL = environ.get('VERIFY2_URL', "modijiurl.com")
+VERIFY2_API = environ.get('VERIFY2_API', "2c340832a9962ff40aa7e91a7f9b035dc7fe8c78")
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'modijiurl.com')
+SHORTLINK_API = environ.get('SHORTLINK_API', '2c340832a9962ff40aa7e91a7f9b035dc7fe8c78')
 IS_SHORTLINK = is_enabled((environ.get('IS_SHORTLINK', 'False')), False)
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "7")
