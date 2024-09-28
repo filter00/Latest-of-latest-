@@ -1,12 +1,12 @@
 if [ -z $UPSTREAM_REPO ]
 then
   echo "Cloning main Repository"
-  git clone https://github.com/The-Happy-Hour/New-Premium-Bot /New-Premium-Bot
+  git clone https://github.com/filter00/Latest-of-latest-
 else
   echo "Cloning Custom Repo from $UPSTREAM_REPO "
-  git clone $UPSTREAM_REPO /New-Premium-Bot
+  git clone $UPSTREAM_REPO /Latest-of-latest-
 fi
-cd /New-Premium-Bot
+cd /Latest-of-latest-
 pip3 install -U -r requirements.txt
 echo "Starting DQ-The-File-Donor...."
 python3 bot.py
