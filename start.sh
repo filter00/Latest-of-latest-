@@ -1,7 +1,7 @@
 if [ -z $UPSTREAM_REPO ]
 then
   echo "Cloning main Repository"
-  git clone https://github.com/filter00/Latest-of-latest-
+  git clone https://github.com/filter00/Latest-of-latest-/Latest-of-latest-
 else
   echo "Cloning Custom Repo from $UPSTREAM_REPO "
   git clone $UPSTREAM_REPO /Latest-of-latest-
