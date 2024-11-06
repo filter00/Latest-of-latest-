@@ -268,14 +268,14 @@ async def start(client, message):
             
     if data.startswith("TheHappyHour"):
         btn = [[
-            InlineKeyboardButton('Group', url="https://t.me/thewarriorsreal")
+            InlineKeyboardButton('📸 Send Payment Screenshot 📸', url="https://t.me/coa400_bot")
         ],[
-            InlineKeyboardButton('☘️ ꜰᴜᴛᴜʀᴇ ☘️', url="https://graph.org/Request-Format-02-22-2"),
+            InlineKeyboardButton('☘️ Feature ☘️', url="https://graph.org/file/02752d4cec59b8a11f1fa-2af85e7b742e2c05b2.jpg"),
             InlineKeyboardButton('cʟᴏꜱᴇ', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(btn)
         await message.reply_photo(
-        photo="https://te.legra.ph/file/e883c4a1e58c241d5565c.jpg",
+        photo="https://graph.org/file/02752d4cec59b8a11f1fa-2af85e7b742e2c05b2.jpg",
         caption="""<blockquote><b>
         <a href='https://graph.org/Request-Format-02-22-2'>💥 ᴘʀᴇᴍɪᴜᴍ ᴘʀɪᴄᴇ 💥
         
