@@ -69,17 +69,15 @@ async def start(client, message):
         )
         return
     if AUTH_CHANNEL and not await is_subscribed(client, message):
-        try:
-            invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
-        except ChatAdminRequired:
-            logger.error("Mᴀᴋᴇ sᴜʀᴇ Bᴏᴛ ɪs ᴀᴅᴍɪɴ ɪɴ Fᴏʀᴄᴇsᴜʙ ᴄʜᴀɴɴᴇʟ")
-            return
-        btn = [
-            [
-                InlineKeyboardButton(
-                    "Jᴏɪɴ Bᴀᴄᴋ-Uᴘ Cʜᴀɴɴᴇʟ", url=invite_link.invite_link)
-            ]
-        ]
+        # try:
+        #     invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
+        # except ChatAdminRequired:
+        #     logger.error("Mᴀᴋᴇ sᴜʀᴇ Bᴏᴛ ɪs ᴀᴅᴍɪɴ ɪɴ Fᴏʀᴄᴇsᴜʙ ᴄʜᴀɴɴᴇʟ")
+        #     return
+        btn = [[
+            InlineKeyboardButton("Channel 1", url="https://t.me/+TrUgOa7pj0QzOTc1"),
+            InlineKeyboardButton("Channel 2", url="https://t.me/+4RvecEgodlZiOWRl")
+            ]]
 
         if message.command[1] != "subscribe":
             try:
