@@ -1,8 +1,9 @@
-umongo
+pyrofork==2.3.43
+umongo==3.1.0
 tgcrypto
-pymongo[srv]==3.12.3
-motor==2.5.1
-marshmallow==3.14.1
+pymongo==4.8.0
+motor==3.5.1
+marshmallow==3.18.0
 requests
 bs4
 git+https://github.com/Joelkb/cinemagoer
@@ -11,7 +12,6 @@ pytz
 aiohttp
 cinemagoer
 shortzy
-pyrofork==2.3.43
 PyLeaves==1.0.2
 cinemagoer
 shortzy
