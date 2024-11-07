@@ -90,7 +90,7 @@ async def start(client, message):
                 btn.append([InlineKeyboardButton("↻ Tʀʏ Aɢᴀɪɴ", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")])
         await client.send_message(
             chat_id=message.from_user.id,
-            text="𝗙𝗶𝗿𝘀𝘁 𝗦𝗲𝗻𝗱 𝗝𝗼𝗶𝗻 𝗥𝗲𝗾𝘂𝗲𝘀𝘁 𝗠𝘆 𝗖𝗵𝗮𝗻𝗻𝗲𝗹....🫤\n\n𝗔𝗳𝘁𝗲𝗿 𝗖𝗹𝗶𝗰𝗸 𝗢𝗻 - 𝗧𝗿𝘆 𝗔𝗴𝗮𝗶𝗻\n𝗔𝗳𝘁𝗲𝗿 𝗖𝗹𝗶𝗰𝗸 𝗢𝗻 - 𝗧𝗿𝘆 𝗔𝗴𝗮𝗶𝗻\n𝗔𝗳𝘁𝗲𝗿 𝗖𝗹𝗶𝗰𝗸 𝗢𝗻 - 𝗧𝗿𝘆 𝗔𝗴𝗮𝗶𝗻\n\n𝗔𝗳𝘁𝗲𝗿 𝗚𝗲𝘁 𝗨𝗻𝗹𝗶𝗺𝗶𝘁𝗲𝗱 𝗠𝗼𝘃𝗶𝗲....😉",
+            text="𝗙𝗶𝗿𝘀𝘁 𝗦𝗲𝗻𝗱 𝗝𝗼𝗶𝗻 𝗥𝗲𝗾𝘂𝗲𝘀𝘁 𝗠𝘆 𝗖𝗵𝗮𝗻𝗻𝗲𝗹....🫤\n𝗔𝗳𝘁𝗲𝗿 𝗚𝗲𝘁 𝗨𝗻𝗹𝗶𝗺𝗶𝘁𝗲𝗱 𝗠𝗼𝘃𝗶𝗲....😉",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.MARKDOWN
             )
@@ -270,19 +270,17 @@ async def start(client, message):
         btn = [[
             InlineKeyboardButton('📸 Send Payment Screenshot 📸', url="https://t.me/coa400_bot")
         ],[
-            InlineKeyboardButton('☘️ Feature ☘️', url="https://graph.org/file/02752d4cec59b8a11f1fa-2af85e7b742e2c05b2.jpg"),
-            InlineKeyboardButton('cʟᴏꜱᴇ', callback_data='close_data')
+            InlineKeyboardButton('☘️ Feature', url="https://envs.sh/jo3.jpg"),
+            InlineKeyboardButton('Close ❌', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(btn)
         await message.reply_photo(
-        photo="https://graph.org/file/02752d4cec59b8a11f1fa-2af85e7b742e2c05b2.jpg",
-        caption="""<blockquote><b>
-        <a href='https://graph.org/Verification-Tutorial-11-07' </a>💥 💫 Premium Features For Bot
+        photo="https://envs.sh/jo3.jpg",
+        caption="""<blockquote><b>💫 Premium Features For Bot
 
 ∆ Premium Lene Se Verification ki koi jarurat nahi! haa koi jarurat nahi!
 ∆ Direct File milega
 ∆ Unlimited Request Kar Sakte Ho
-
 
 🍀 Premium Price 
 
@@ -290,10 +288,7 @@ async def start(client, message):
 ° 2 Month Plan : 100₹
 ° 3 Month  Plan : 150₹
 
-📌 Note: Payment ke bad is Bot me Screenshot send kare or reply ka wait kare Kiyuki (Admin Busy ho skte he !)💥
-    Apna Plan Check Karein /myplan   
-⚡@thewarriorsreal⚡
-ㅤㅤㅤㅤㅤ</b></blockquote>""",
+📌 Note: Payment ke bad is Bot me Screenshot send kare or reply ka wait kare Kiyuki (Admin Busy ho skte he !) Apna Plan Check Karein - /myplan</b></blockquote>""",
             reply_markup=reply_markup
         )
         return
@@ -307,7 +302,7 @@ async def start(client, message):
                     InlineKeyboardButton("Vᴇʀɪғʏ", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=", file_id)),
                     InlineKeyboardButton("Hᴏᴡ Tᴏ Vᴇʀɪғʏ", url=HOW_TO_VERIFY)
                 ],[
-            InlineKeyboardButton("⛥ Pʀᴇᴍɪᴜᴍ", url="https://graph.org/Verification-Tutorial-11-07-2")
+            InlineKeyboardButton("💎 Buy Premium 💎", url=f"https://telegram.me/{temp.U_NAME}?start=thewarriorsreal")
           ]]
                 await message.reply_text(
                     text="<b>हर 1 दिन में 10 सेकंड का वेरिफिकेशन \nजरूरी हे !\n\nJust 10 second Bro 🥲\n\nAfter then Get Unlimited Movies...✅</b>",
@@ -360,7 +355,7 @@ async def start(client, message):
             InlineKeyboardButton("Vᴇʀɪғʏ", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=", file_id)),
             InlineKeyboardButton("Hᴏᴡ Tᴏ Vᴇʀɪғʏ", url=HOW_TO_VERIFY)
         ],[
-            InlineKeyboardButton("⛥ Pʀᴇᴍɪᴜᴍ", url="https://graph.org/Verification-Tutorial-11-07")
+            InlineKeyboardButton("💎 Buy Premium 💎", url=f"https://telegram.me/{temp.U_NAME}?start=thewarriorsreal")
           ]]
         await message.reply_text(
             text="<b>हर दो दिन में 10 सेकंड का वेरिफिकेशन \nजरूरी हे !\n\nJust 10 second Bro 🥲\n\nAfter then Get Unlimited Movies...✅</b>",
