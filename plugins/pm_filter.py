@@ -1404,7 +1404,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇs •', url=CHNL_LNK),
                     InlineKeyboardButton('• Gʀᴏᴜᴘ •', url=GRP_LNK)
                 ],[
-                    InlineKeyboardButton('• Hᴇʟᴘ •', callback_data='kushal'),
+                    InlineKeyboardButton("Premium", url=f"https://telegram.me/{temp.U_NAME}?start=thewarriorsreal"),
                     InlineKeyboardButton('• Aʙᴏᴜᴛ •', callback_data='about')
                   ],[
                     InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/thewarriorsreal')
