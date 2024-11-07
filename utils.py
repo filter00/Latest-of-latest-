@@ -680,7 +680,7 @@ async def get_token(bot, userid, link, fileid):
     time_var = status["time"]
     hour, minute, second = time_var.split(":")
     year, month, day = date_var.split("-")
-    last_date, last_time = str((datetime(year=int(year), month=int(month), day=int(day), hour=int(hour), minute=int(minute), second=int(second)))-timedelta(hours=40)).split(" ")
+    last_date, last_time = str((datetime(year=int(year), month=int(month), day=int(day), hour=int(hour), minute=int(minute), second=int(second)))-timedelta(hours=24)).split(" ")
     tz = pytz.timezone('Asia/Kolkata')
     curr_date, curr_time = str(datetime.now(tz)).split(" ")
     if last_date == curr_date:
@@ -708,7 +708,7 @@ async def send_all(bot, userid, files, ident):
             ]]
         await bot.send_message(
             chat_id=userid,
-            text="𝗙𝗶𝗿𝘀𝘁 𝗝𝗼𝗶𝗻 𝗠𝘆 𝗖𝗵𝗮𝗻𝗻𝗲𝗹....🫤\n\n𝗔𝗳𝘁𝗲𝗿 then 𝗚𝗲𝘁 𝗨𝗻𝗹𝗶𝗺𝗶𝘁𝗲𝗱 𝗠𝗼𝘃𝗶𝗲....😉",
+            text="𝗙𝗶𝗿𝘀𝘁 𝗝𝗼𝗶𝗻 𝗠𝘆 𝗖𝗵𝗮𝗻𝗻𝗲𝗹....🫤\n𝗔𝗳𝘁𝗲𝗿 then 𝗚𝗲𝘁 𝗨𝗻𝗹𝗶𝗺𝗶𝘁𝗲𝗱 𝗠𝗼𝘃𝗶𝗲....😉",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.MARKDOWN
             )
@@ -738,9 +738,9 @@ async def send_all(bot, userid, files, ident):
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                            InlineKeyboardButton("🖥️ ᴏɴʟɪɴᴇ ᴡᴀᴛᴄʜ / ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ 📥", callback_data=f"stream#{file.file_id}")
-                        ],[
-                        InlineKeyboardButton('🍁 ꜱᴇʟᴇᴄᴛ ᴄʜᴀᴛ & ꜱʜᴀʀᴇ ʙᴏᴛ 🍁', url='https://t.me/share/url?url=%F0%9F%91%89%20%C9%AA%EA%9C%B0%20%CA%8F%E1%B4%8F%E1%B4%9C%20%C9%B4%E1%B4%87%E1%B4%87%E1%B4%85%20%E1%B4%80%C9%B4%CA%8F%20%E1%B4%8D%E1%B4%8F%E1%B4%A0%C9%AA%E1%B4%87%2C%20%EA%9C%B1%E1%B4%87%CA%80%C9%AA%E1%B4%87%EA%9C%B1%20%26%20%0A%E1%B4%80%C9%B4%C9%AA%E1%B4%8D%E1%B4%87%20-%20%E1%B4%8A%E1%B4%9C%EA%9C%B1%E1%B4%9B%20%E1%B4%9B%CA%8F%E1%B4%98%E1%B4%87%20%C9%B4%E1%B4%80%E1%B4%8D%E1%B4%87%20%26%20%C9%A2%E1%B4%87%E1%B4%9B%20%C9%AA%C9%B4%203%20%EA%9C%B1%E1%B4%87%E1%B4%84%E1%B4%8F%C9%B4%E1%B4%85%20%E2%9C%85%0A%0A%E1%B4%8A%E1%B4%8F%C9%AA%C9%B4%20%E1%B4%8F%E1%B4%9C%CA%80%20%E1%B4%8D%E1%B4%8F%E1%B4%A0%C9%AA%E1%B4%87%20%CA%80%E1%B4%87%C7%AB%E1%B4%9C%E1%B4%87%EA%9C%B1%E1%B4%9B%20%C9%A2%CA%80%E1%B4%8F%E1%B4%9C%E1%B4%98%20%E2%9C%85%0A%F0%9F%91%89%20%40ThappyHour%20%0A%F0%9F%91%89%20%40ThappyHour%0A%0A%E1%B4%8A%E1%B4%8F%C9%AA%C9%B4%20%EA%9C%B0%E1%B4%8F%CA%80%20%C9%B4%E1%B4%87%E1%B4%A1%20%CA%80%E1%B4%87%CA%9F%E1%B4%87%E1%B4%80%EA%9C%B1%E1%B4%87%20%E1%B4%8D%E1%B4%8F%E1%B4%A0%C9%AA%E1%B4%87%20%E2%9C%85%0A%F0%9F%91%89%20%40The_Happy_Hour_Hindi%0A%F0%9F%91%89%20%40The_Happy_Hour_Hindi%0A%0A%F0%9F%91%89%20%E1%B4%9B%CA%9C%E1%B4%87%20%CA%9C%E1%B4%80%E1%B4%98%E1%B4%98%CA%8F%20%CA%9C%E1%B4%8F%E1%B4%9C%CA%80%E2%84%A2%20%E2%9C%85')
+                        #     InlineKeyboardButton("🖥️ ᴏɴʟɪɴᴇ ᴡᴀᴛᴄʜ / ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ 📥", callback_data=f"stream#{file.file_id}")
+                        # ],[
+                        InlineKeyboardButton('🍁 ꜱᴇʟᴇᴄᴛ ᴄʜᴀᴛ & ꜱʜᴀʀᴇ ʙᴏᴛ 🍁', url='https://t.me/thewarriorsreal')
                         ]
                         ]
                     )
@@ -760,11 +760,11 @@ async def send_all(bot, userid, files, ident):
             InlineKeyboardButton("Vᴇʀɪғʏ", url=await get_token(bot, userid, f"https://telegram.me/{temp.U_NAME}?start=", 'send_all')),
             InlineKeyboardButton("Hᴏᴡ Tᴏ Vᴇʀɪғʏ", url=HOW_TO_VERIFY)
         ],[
-            InlineKeyboardButton("⛥ ʀᴇᴍᴏᴠᴇ ᴠᴇʀɪꜰɪᴄᴀᴛɪᴏɴ ⛥", url="https://t.me/tutorialcoa")
+            InlineKeyboardButton("💎 Buy Premium 💎", url=f"https://telegram.me/{temp.U_NAME}?start=thewarriorsreal")
           ]]
         await bot.send_message(
             chat_id=userid,
-            text="<b>हर दो दिन में 10 सेकंड का वेरिफिकेशन \nजरूरी हे !\n\nJust 10 second Bro 🥲\n\nAfter then Get Unlimited Movies...✅</b>",
+            text="<b>हर दिन में 10 सेकंड का वेरिफिकेशन \nजरूरी हे !\n\nJust 10 second Bro 🥲\n\nAfter then Get Unlimited Movies...✅</b>",
             protect_content=True if PROTECT_CONTENT else False,
             reply_markup=InlineKeyboardMarkup(btn)
         )
@@ -791,13 +791,13 @@ async def send_all(bot, userid, files, ident):
                 caption=f_caption,
                 protect_content=True if ident == "filep" else False,
                 reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                        InlineKeyboardButton("🖥️ ᴏɴʟɪɴᴇ ᴡᴀᴛᴄʜ / ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ 📥", callback_data=f"stream#{file.file_id}")
-                    ],[
-                        InlineKeyboardButton('🍁 ꜱᴇʟᴇᴄᴛ ᴄʜᴀᴛ & ꜱʜᴀʀᴇ ʙᴏᴛ 🍁', url='https://t.me/share/url?url=%F0%9F%91%89%20%C9%AA%EA%9C%B0%20%CA%8F%E1%B4%8F%E1%B4%9C%20%C9%B4%E1%B4%87%E1%B4%87%E1%B4%85%20%E1%B4%80%C9%B4%CA%8F%20%E1%B4%8D%E1%B4%8F%E1%B4%A0%C9%AA%E1%B4%87%2C%20%EA%9C%B1%E1%B4%87%CA%80%C9%AA%E1%B4%87%EA%9C%B1%20%26%20%0A%E1%B4%80%C9%B4%C9%AA%E1%B4%8D%E1%B4%87%20-%20%E1%B4%8A%E1%B4%9C%EA%9C%B1%E1%B4%9B%20%E1%B4%9B%CA%8F%E1%B4%98%E1%B4%87%20%C9%B4%E1%B4%80%E1%B4%8D%E1%B4%87%20%26%20%C9%A2%E1%B4%87%E1%B4%9B%20%C9%AA%C9%B4%203%20%EA%9C%B1%E1%B4%87%E1%B4%84%E1%B4%8F%C9%B4%E1%B4%85%20%E2%9C%85%0A%0A%E1%B4%8A%E1%B4%8F%C9%AA%C9%B4%20%E1%B4%8F%E1%B4%9C%CA%80%20%E1%B4%8D%E1%B4%8F%E1%B4%A0%C9%AA%E1%B4%87%20%CA%80%E1%B4%87%C7%AB%E1%B4%9C%E1%B4%87%EA%9C%B1%E1%B4%9B%20%C9%A2%CA%80%E1%B4%8F%E1%B4%9C%E1%B4%98%20%E2%9C%85%0A%F0%9F%91%89%20%40ThappyHour%20%0A%F0%9F%91%89%20%40ThappyHour%0A%0A%E1%B4%8A%E1%B4%8F%C9%AA%C9%B4%20%EA%9C%B0%E1%B4%8F%CA%80%20%C9%B4%E1%B4%87%E1%B4%A1%20%CA%80%E1%B4%87%CA%9F%E1%B4%87%E1%B4%80%EA%9C%B1%E1%B4%87%20%E1%B4%8D%E1%B4%8F%E1%B4%A0%C9%AA%E1%B4%87%20%E2%9C%85%0A%F0%9F%91%89%20%40The_Happy_Hour_Hindi%0A%F0%9F%91%89%20%40The_Happy_Hour_Hindi%0A%0A%F0%9F%91%89%20%E1%B4%9B%CA%9C%E1%B4%87%20%CA%9C%E1%B4%80%E1%B4%98%E1%B4%98%CA%8F%20%CA%9C%E1%B4%8F%E1%B4%9C%CA%80%E2%84%A2%20%E2%9C%85')
-                    ]
-                    ]
+                            [
+                            [
+                        #     InlineKeyboardButton("🖥️ ᴏɴʟɪɴᴇ ᴡᴀᴛᴄʜ / ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ 📥", callback_data=f"stream#{file.file_id}")
+                        # ],[
+                        InlineKeyboardButton('🍁 ꜱᴇʟᴇᴄᴛ ᴄʜᴀᴛ & ꜱʜᴀʀᴇ ʙᴏᴛ 🍁', url='https://t.me/thewarriorsreal')
+                        ]
+                        ]
                 )
             )
         except UserIsBlocked:
