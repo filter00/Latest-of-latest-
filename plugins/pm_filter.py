@@ -145,7 +145,7 @@ async def pm_text(bot, message):
     user = message.from_user.first_name
     user_id = message.from_user.id
     if content.startswith("/") or content.startswith("#"): return  # ignore commands and hashtags
-    if user_id in ADMINS: return # ignore admins
+    # if user_id in ADMINS: return # ignore admins
     await message.reply_text("<b>Type & Get - t.me/thewarriorsreal</b>")
     await bot.send_message(
         chat_id=LOG_CHANNEL,
@@ -973,11 +973,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton("Vᴇʀɪғʏ", url=await get_token(bot, userid, f"https://telegram.me/{temp.U_NAME}?start=", 'send_all')),
             InlineKeyboardButton("Hᴏᴡ Tᴏ Vᴇʀɪғʏ", url=HOW_TO_VERIFY)
         ],[
-            InlineKeyboardButton("⛥ ʀᴇᴍᴏᴠᴇ ᴠᴇʀɪꜰɪᴄᴀᴛɪᴏɴ ⛥", url="https://t.me/TheHappyHourBOT?start=TheHappyHour")
+            InlineKeyboardButton("💎 Buy Premium 💎", url=f"https://telegram.me/{temp.U_NAME}?start=thewarriorsreal")
           ]]
                         await client.send_message(
                             chat_id=query.from_user.id,
-                            text="<b>हर दो दिन में 10 सेकंड का वेरिफिकेशन \nजरूरी हे !\n\nJust 10 second Bro 🥲\n\nAfter Get Unlimited Movies...✅</b>",
+                            text="<b>हर दिन में 10 सेकंड का वेरिफिकेशन \nजरूरी हे !\n\nJust 10 second Bro 🥲\n\nAfter Get Unlimited Movies...✅</b>",
                             protect_content=True if ident == 'checksubp' else False,
                             disable_web_page_preview=True,
                             parse_mode=enums.ParseMode.HTML,
@@ -1048,7 +1048,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton("Vᴇʀɪғʏ", url=await get_token(client, query.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=", file_id)),
                 InlineKeyboardButton("Hᴏᴡ Tᴏ Vᴇʀɪғʏ", url=HOW_TO_VERIFY)
             ],[
-            InlineKeyboardButton("⛥ ʀᴇᴍᴏᴠᴇ ᴠᴇʀɪꜰɪᴄᴀᴛɪᴏɴ ⛥", url="https://t.me/TheHappyHourBOT?start=TheHappyHour")
+            InlineKeyboardButton("💎 Buy Premium 💎", url=f"https://telegram.me/{temp.U_NAME}?start=thewarriorsreal")
           ]]
             await client.send_message(
                 chat_id=query.from_user.id,
@@ -1981,8 +1981,8 @@ async def auto_filter(client, msg, spoll=False):
             return
         if len(message.text) < 100:
             search = message.text
-            m=await message.reply_sticker(sticker="CAACAgIAAxkBAAEX9rZlrzK7LG96b1yVJhnhA0RGfT8L9gACnFwBAAFji0YM2veI_Lsd8FIeBA",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Plzz Wait", url=CHNL_LNK)]]))
+            # m=await message.reply_sticker(sticker="CAACAgIAAxkBAAEX9rZlrzK7LG96b1yVJhnhA0RGfT8L9gACnFwBAAFji0YM2veI_Lsd8FIeBA",
+            # reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Plzz Wait", url=CHNL_LNK)]]))
             search = search.lower()
             find = search.split(" ")
             search = ""
@@ -2010,8 +2010,8 @@ async def auto_filter(client, msg, spoll=False):
     else:
         message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = spoll
-        m=await message.reply_sticker(sticker="CAACAgIAAxkBAAEX9rZlrzK7LG96b1yVJhnhA0RGfT8L9gACnFwBAAFji0YM2veI_Lsd8FIeBA",
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Plzz Wait", url=CHNL_LNK)]]))
+        # m=await message.reply_sticker(sticker="CAACAgIAAxkBAAEX9rZlrzK7LG96b1yVJhnhA0RGfT8L9gACnFwBAAFji0YM2veI_Lsd8FIeBA",
+        # reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Plzz Wait", url=CHNL_LNK)]]))
         settings = await get_settings(message.chat.id)
     temp.SEND_ALL_TEMP[message.from_user.id] = files
     temp.KEYWORD[message.from_user.id] = search
@@ -2122,7 +2122,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>{message.from_user.mention} ʏᴏᴜʀ ʀᴇꜱᴜʟᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ꜰᴏʀ {search}</b>"
+        cap = f"<b>ʏᴏᴜʀ ʀᴇꜱᴜʟᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ꜰᴏʀ {search}</b>"
     CAP[search] = cap
     if imdb and imdb.get('poster'):
         try:
@@ -2152,32 +2152,23 @@ async def auto_filter(client, msg, spoll=False):
                 await asyncio.sleep(150)
                 await hmm.delete()
                 await message.delete()
-        except Exception as e:
-            logger.exception(e)
-            fek = await message.reply_text(text=cap + files_link, reply_markup=InlineKeyboardMarkup(btn))
-            try:
-                if settings['auto_delete']:
-                    await asyncio.sleep(150)
-                    await fek.delete()
-                    await message.delete()
-            except KeyError:
-                await save_group_settings(message.chat.id, 'auto_delete', True)
-                await asyncio.sleep(150)
-                await fek.delete()
-                await message.delete()
+    #     except Exception as e:
+    #         logger.exception(e)
+    #         fek = await message.reply_text(text=cap + files_link, reply_markup=InlineKeyboardMarkup(btn))
+    #         await asyncio.sleep(150)
+    #         await fek.delete()
+    #         await message.delete()
+    #         except KeyError:
+    #             await save_group_settings(message.chat.id, 'auto_delete', True)
+    #             await asyncio.sleep(150)
+    #             await fek.delete()
+    #             await message.delete()
     else:
         fuk = await message.reply_text(text=cap + files_link, reply_markup=InlineKeyboardMarkup(btn))
-        await m.delete()
-        try:
-            if settings['auto_delete']:
-                await asyncio.sleep(150)
-                await fuk.delete()
-                await message.delete()
-        except KeyError:
-            await save_group_settings(message.chat.id, 'auto_delete', True)
-            await asyncio.sleep(150)
-            await fuk.delete()
-            await message.delete()
+        # await m.delete()
+        await asyncio.sleep(150)
+        await fuk.delete()
+        await message.delete()
     if spoll:
         await msg.message.delete()
 
