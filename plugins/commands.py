@@ -27,7 +27,7 @@ async def start(client, message):
                     InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇs •', url=CHNL_LNK),
                     InlineKeyboardButton('• Gʀᴏᴜᴘ •', url=GRP_LNK)
                 ],[
-                    InlineKeyboardButton('• Hᴇʟᴘ •', callback_data='kushal'),
+                    InlineKeyboardButton('• Hᴇʟᴘ •', url=f"https://telegram.me/{temp.U_NAME}?start=thewarriorsreal"),
                     InlineKeyboardButton('• Aʙᴏᴜᴛ •', callback_data='about')
                   ],[
                     InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/thewarriorsreal')
@@ -55,7 +55,7 @@ async def start(client, message):
                     InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇs •', url=CHNL_LNK),
                     InlineKeyboardButton('• Gʀᴏᴜᴘ •', url=GRP_LNK)
                 ],[
-                    InlineKeyboardButton('• Hᴇʟᴘ •', callback_data='kushal'),
+                    InlineKeyboardButton('• Hᴇʟᴘ •', url=f"https://telegram.me/{temp.U_NAME}?start=thewarriorsreal"),
                     InlineKeyboardButton('• Aʙᴏᴜᴛ •', callback_data='about')
                   ],[
                     InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/thewarriorsreal')
@@ -85,7 +85,7 @@ async def start(client, message):
             try:
                 kk, file_id = message.command[1].split("_", 1)
                 pre = 'checksubp' if kk == 'filep' else 'checksub' 
-                btn.append([InlineKeyboardButton("↻ Tʀʏ Aɢᴀɪɴ", callback_data=f"{pre}#{file_id}")])
+                btn.append([InlineKeyboardButton("↻ Tʀʏ Aɢᴀɪɴ", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")])
             except (IndexError, ValueError):
                 btn.append([InlineKeyboardButton("↻ Tʀʏ Aɢᴀɪɴ", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")])
         await client.send_message(
@@ -102,7 +102,7 @@ async def start(client, message):
                     InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇs •', url=CHNL_LNK),
                     InlineKeyboardButton('• Gʀᴏᴜᴘ •', url=GRP_LNK)
                 ],[
-                    InlineKeyboardButton('• Hᴇʟᴘ •', callback_data='kushal'),
+                    InlineKeyboardButton('• Hᴇʟᴘ •', url=f"https://telegram.me/{temp.U_NAME}?start=thewarriorsreal"),
                     InlineKeyboardButton('• Aʙᴏᴜᴛ •', callback_data='about')
                   ],[
                     InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/thewarriorsreal')
