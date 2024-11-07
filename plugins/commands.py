@@ -277,8 +277,21 @@ async def start(client, message):
         await message.reply_photo(
         photo="https://graph.org/file/02752d4cec59b8a11f1fa-2af85e7b742e2c05b2.jpg",
         caption="""<blockquote><b>
-        <a href='https://graph.org/Request-Format-02-22-2'>💥 ᴘʀᴇᴍɪᴜᴍ ᴘʀɪᴄᴇ 💥
-        
+        <a href='https://graph.org/Verification-Tutorial-11-07'>💥 💫 Premium Features For Bot
+
+> Premium Lene Se Verification ki koi jarurat nahi! haa koi jarurat nahi!
+> Direct File milega
+> Unlimited Request Kar Sakte Ho
+
+
+🍀 Premium Price 
+
+> 1 Month Plan : 50₹
+> 2 Month Plan : 100₹
+> 3 Month  Plan : 150₹
+
+📌 Note: Payment ke bad is Bot me Screenshot send kare or reply ka wait kare Kiyuki (Admin Busy ho skte he !)💥
+    Apna Plan Check Karein /myplan   
 ⚡@thewarriorsreal⚡
 ㅤㅤㅤㅤㅤ</a></b></blockquote>""",
             reply_markup=reply_markup
@@ -294,10 +307,10 @@ async def start(client, message):
                     InlineKeyboardButton("Vᴇʀɪғʏ", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=", file_id)),
                     InlineKeyboardButton("Hᴏᴡ Tᴏ Vᴇʀɪғʏ", url=HOW_TO_VERIFY)
                 ],[
-            InlineKeyboardButton("⛥ ʀᴇᴍᴏᴠᴇ ᴠᴇʀɪꜰɪᴄᴀᴛɪᴏɴ ⛥", url="https://t.me/ANKIT3690")
+            InlineKeyboardButton("⛥ Pʀᴇᴍɪᴜᴍ", url="https://graph.org/Verification-Tutorial-11-07-2")
           ]]
                 await message.reply_text(
-                    text="<b>हर दो दिन में 10 सेकंड का वेरिफिकेशन \nजरूरी हे !\n\nJust 10 second Bro 🥲\n\nAfter then Get Unlimited Movies...✅</b>",
+                    text="<b>हर 1 दिन में 10 सेकंड का वेरिफिकेशन \nजरूरी हे !\n\nJust 10 second Bro 🥲\n\nAfter then Get Unlimited Movies...✅</b>",
                     protect_content=True if PROTECT_CONTENT else False,
                     reply_markup=InlineKeyboardMarkup(btn)
                 )
@@ -347,7 +360,7 @@ async def start(client, message):
             InlineKeyboardButton("Vᴇʀɪғʏ", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=", file_id)),
             InlineKeyboardButton("Hᴏᴡ Tᴏ Vᴇʀɪғʏ", url=HOW_TO_VERIFY)
         ],[
-            InlineKeyboardButton("⛥ ʀᴇᴍᴏᴠᴇ ᴠᴇʀɪꜰɪᴄᴀᴛɪᴏɴ ⛥", url="https://t.me/ANKIT3690")
+            InlineKeyboardButton("⛥ Pʀᴇᴍɪᴜᴍ", url="https://graph.org/Verification-Tutorial-11-07")
           ]]
         await message.reply_text(
             text="<b>हर दो दिन में 10 सेकंड का वेरिफिकेशन \nजरूरी हे !\n\nJust 10 second Bro 🥲\n\nAfter then Get Unlimited Movies...✅</b>",
