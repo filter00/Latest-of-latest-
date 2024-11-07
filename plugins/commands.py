@@ -277,23 +277,23 @@ async def start(client, message):
         await message.reply_photo(
         photo="https://graph.org/file/02752d4cec59b8a11f1fa-2af85e7b742e2c05b2.jpg",
         caption="""<blockquote><b>
-        <a href='https://graph.org/Verification-Tutorial-11-07'>💥 💫 Premium Features For Bot
+        <a href='https://graph.org/Verification-Tutorial-11-07' </a>💥 💫 Premium Features For Bot
 
-> Premium Lene Se Verification ki koi jarurat nahi! haa koi jarurat nahi!
-> Direct File milega
-> Unlimited Request Kar Sakte Ho
+∆ Premium Lene Se Verification ki koi jarurat nahi! haa koi jarurat nahi!
+∆ Direct File milega
+∆ Unlimited Request Kar Sakte Ho
 
 
 🍀 Premium Price 
 
-> 1 Month Plan : 50₹
-> 2 Month Plan : 100₹
-> 3 Month  Plan : 150₹
+° 1 Month Plan : 50₹
+° 2 Month Plan : 100₹
+° 3 Month  Plan : 150₹
 
 📌 Note: Payment ke bad is Bot me Screenshot send kare or reply ka wait kare Kiyuki (Admin Busy ho skte he !)💥
     Apna Plan Check Karein /myplan   
 ⚡@thewarriorsreal⚡
-ㅤㅤㅤㅤㅤ</a></b></blockquote>""",
+ㅤㅤㅤㅤㅤ</b></blockquote>""",
             reply_markup=reply_markup
         )
         return
