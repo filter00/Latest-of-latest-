@@ -48,7 +48,7 @@ async def myplan(client, message):
         time_left_str = f"{days} days, {hours} hours, {minutes} minutes"
         await message.reply_text(f"<blockquote><b>⚡ Group ⚡\n\nᴛɪᴍᴇ ʟᴇꜰᴛ - {time_left_str}\nᴇxᴘɪʀᴇ ᴛɪᴍᴇ - {expiry_str_in_ist}</b></blockquote>", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Uᴘɢʀᴀᴅᴇ", url="https://t.me/TheHappyHourBot?start=TheHappyHour"), InlineKeyboardButton("Cʟᴏsᴇ ❌", callback_data="close_data")]])) 
     else:
-        await message.reply_text(f"<b><blockquote>@thewarriorsreal</blockquote></b>")
+        await message.reply_text(f"<b><blockquote>Aapne koi Bhi Premium Plan nahi liya hai, abhi le aur laabh uthaye! </blockquote></b>")
 
 @Client.on_message(filters.command("add_premium") & filters.user(ADMINS))
 async def give_premium_cmd_handler(client, message):
