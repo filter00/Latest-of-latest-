@@ -266,7 +266,7 @@ async def start(client, message):
                 protect_content=True if PROTECT_CONTENT else False
             )
             
-    if data.startswith("TheHappyHour"):
+    if data.startswith("thewarriorsreal"):
         btn = [[
             InlineKeyboardButton('📸 Send Payment Screenshot 📸', url="https://t.me/coa400_bot")
         ],[
