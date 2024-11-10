@@ -1999,7 +1999,7 @@ async def auto_filter(client, msg, spoll=False):
             if not files:
                 await m.delete()
                 if settings["spell_check"]:
-                    return await advantage_spell_chok(client, msg)
+                    return await NOT_AVAILABLE(client, msg)
                 else:
                     if NO_RESULTS_MSG:
                         await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, search)))
@@ -2171,6 +2171,10 @@ async def auto_filter(client, msg, spoll=False):
     if spoll:
         await msg.message.delete()
 
+async def NOT_AVAILABLE(msg):
+    d = await msg.reply_text("**Result Not Found\nChack Your Spelling And Try Again...**")
+    await asyncio.sleep(30)
+    await d.delete()
 
 async def advantage_spell_chok(client, msg):
     mv_id = msg.id
