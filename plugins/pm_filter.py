@@ -1981,8 +1981,7 @@ async def auto_filter(client, msg, spoll=False):
             return
         if len(message.text) < 100:
             search = message.text
-            # m=await message.reply_sticker(sticker="CAACAgIAAxkBAAEX9rZlrzK7LG96b1yVJhnhA0RGfT8L9gACnFwBAAFji0YM2veI_Lsd8FIeBA",
-            # reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Plzz Wait", url=CHNL_LNK)]]))
+            m=await message.reply_text("**Searching...**")
             search = search.lower()
             find = search.split(" ")
             search = ""
@@ -2165,7 +2164,7 @@ async def auto_filter(client, msg, spoll=False):
     #             await message.delete()
     else:
         fuk = await message.reply_text(text=cap + files_link, reply_markup=InlineKeyboardMarkup(btn))
-        # await m.delete()
+        await m.delete()
         await asyncio.sleep(150)
         await fuk.delete()
         await message.delete()
