@@ -973,7 +973,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton("Vᴇʀɪғʏ", url=await get_token(bot, userid, f"https://telegram.me/{temp.U_NAME}?start=", 'send_all')),
             InlineKeyboardButton("Hᴏᴡ Tᴏ Vᴇʀɪғʏ", url=HOW_TO_VERIFY)
         ],[
-            InlineKeyboardButton("💎 Buy Premium 💎", url=f"https://telegram.me/{temp.U_NAME}?start=thewarriorsreal")
+            InlineKeyboardButton("Support Group", url=f"https://t.me/queries369")
           ]]
                         await client.send_message(
                             chat_id=query.from_user.id,
@@ -993,7 +993,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             reply_markup=InlineKeyboardMarkup(
                                 [
                                 [
-                    InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/thewarriorsreal')
+                    InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/+W1E1qaQuk2I5OWU9')
                     ]
                                 ]
                             )
@@ -1048,7 +1048,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton("Vᴇʀɪғʏ", url=await get_token(client, query.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=", file_id)),
                 InlineKeyboardButton("Hᴏᴡ Tᴏ Vᴇʀɪғʏ", url=HOW_TO_VERIFY)
             ],[
-            InlineKeyboardButton("💎 Buy Premium 💎", url=f"https://telegram.me/{temp.U_NAME}?start=thewarriorsreal")
+            InlineKeyboardButton("Support Group", url=f"https://t.me/queries369")
           ]]
             await client.send_message(
                 chat_id=query.from_user.id,
@@ -1399,15 +1399,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "start":
         buttons = [[
-                    InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-                ],[
                     InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇs •', url=CHNL_LNK),
                     InlineKeyboardButton('• Gʀᴏᴜᴘ •', url=GRP_LNK)
                 ],[
-                    InlineKeyboardButton("Premium", url=f"https://telegram.me/{temp.U_NAME}?start=thewarriorsreal"),
-                    InlineKeyboardButton('• Aʙᴏᴜᴛ •', callback_data='about')
-                  ],[
-                    InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/thewarriorsreal')
+                    InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/+W1E1qaQuk2I5OWU9')
                     ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
