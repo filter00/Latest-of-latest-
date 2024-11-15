@@ -22,15 +22,10 @@ BATCH_FILES = {}
 async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [[
-                    InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-                ],[
                     InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇs •', url=CHNL_LNK),
                     InlineKeyboardButton('• Gʀᴏᴜᴘ •', url=GRP_LNK)
-                ],[
-                    InlineKeyboardButton('• Hᴇʟᴘ •', url=f"https://telegram.me/{temp.U_NAME}?start=thewarriorsreal"),
-                    InlineKeyboardButton('• Aʙᴏᴜᴛ •', callback_data='about')
                   ],[
-                    InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/thewarriorsreal')
+                    InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/+TrUgOa7pj0QzOTc1')
                     ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -50,15 +45,10 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-                    InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-                ],[
                     InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇs •', url=CHNL_LNK),
                     InlineKeyboardButton('• Gʀᴏᴜᴘ •', url=GRP_LNK)
-                ],[
-                    InlineKeyboardButton('• Hᴇʟᴘ •', url=f"https://telegram.me/{temp.U_NAME}?start=thewarriorsreal"),
-                    InlineKeyboardButton('• Aʙᴏᴜᴛ •', callback_data='about')
                   ],[
-                    InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/thewarriorsreal')
+                    InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/+TrUgOa7pj0QzOTc1')
                     ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -95,15 +85,10 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-                    InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-                ],[
                     InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇs •', url=CHNL_LNK),
                     InlineKeyboardButton('• Gʀᴏᴜᴘ •', url=GRP_LNK)
-                ],[
-                    InlineKeyboardButton('• Hᴇʟᴘ •', url=f"https://telegram.me/{temp.U_NAME}?start=thewarriorsreal"),
-                    InlineKeyboardButton('• Aʙᴏᴜᴛ •', callback_data='about')
                   ],[
-                    InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/thewarriorsreal')
+                    InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/+TrUgOa7pj0QzOTc1')
                     ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -154,7 +139,7 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                          [
-                    InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/thewarriorsreal')
+                    InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/+TrUgOa7pj0QzOTc1')
                     ]
                         ]
                     )
@@ -170,7 +155,7 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                          [
-                    InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/thewarriorsreal')
+                    InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/+TrUgOa7pj0QzOTc1')
                     ]
                         ]
                     )
@@ -276,9 +261,7 @@ async def start(client, message):
         photo="https://envs.sh/jo3.jpg",
         caption="""<blockquote><b>💫 Premium Features For Bot
 
-∆ Premium Lene Se Verification ki koi jarurat nahi! haa koi jarurat nahi!
-∆ Direct File milega
-∆ Unlimited Request Kar Sakte Ho
+∆ Ab Tak start hua nahi hai premium...
 
 🍀 Premium Price 
 
@@ -300,7 +283,7 @@ async def start(client, message):
                     InlineKeyboardButton("Vᴇʀɪғʏ", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=", file_id)),
                     InlineKeyboardButton("Hᴏᴡ Tᴏ Vᴇʀɪғʏ", url=HOW_TO_VERIFY)
                 ],[
-            InlineKeyboardButton("💎 Buy Premium 💎", url=f"https://telegram.me/{temp.U_NAME}?start=thewarriorsreal")
+            InlineKeyboardButton("Support Group", url=f"https://t.me/queries369")
           ]]
                 await message.reply_text(
                     text="<b>हर 1 दिन में 10 सेकंड का वेरिफिकेशन \nजरूरी हे !\n\nJust 10 second Bro 🥲\n\nAfter then Get Unlimited Movies...✅</b>",
@@ -315,7 +298,7 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(
                     [
                      [
-                    InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/thewarriorsreal')
+                    InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/+TrUgOa7pj0QzOTc1')
                     ]
                     ]
                 )
@@ -353,7 +336,7 @@ async def start(client, message):
             InlineKeyboardButton("Vᴇʀɪғʏ", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=", file_id)),
             InlineKeyboardButton("Hᴏᴡ Tᴏ Vᴇʀɪғʏ", url=HOW_TO_VERIFY)
         ],[
-            InlineKeyboardButton("💎 Buy Premium 💎", url=f"https://telegram.me/{temp.U_NAME}?start=thewarriorsreal")
+            InlineKeyboardButton("Support Group", url=f"https://t.me/queries369")
           ]]
         await message.reply_text(
             text="<b>हर दो दिन में 10 सेकंड का वेरिफिकेशन \nजरूरी हे !\n\nJust 10 second Bro 🥲\n\nAfter then Get Unlimited Movies...✅</b>",
