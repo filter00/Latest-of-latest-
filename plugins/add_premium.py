@@ -48,7 +48,7 @@ async def myplan(client, message):
         time_left_str = f"{days} days, {hours} hours, {minutes} minutes"
         await message.reply_text(f"<blockquote><b>⚡ Group ⚡\n\nᴛɪᴍᴇ ʟᴇꜰᴛ - {time_left_str}\nᴇxᴘɪʀᴇ ᴛɪᴍᴇ - {expiry_str_in_ist}</b></blockquote>", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Uᴘɢʀᴀᴅᴇ", url="https://t.me/TheHappyHourBot?start=TheHappyHour"), InlineKeyboardButton("Cʟᴏsᴇ ❌", callback_data="close_data")]])) 
     else:
-        await message.reply_text(f"<b><blockquote>Aapne koi Bhi Premium Plan nahi liya hai, abhi le aur laabh uthaye! \n\n Click Here To Buy - /premium</blockquote></b>")
+        await message.reply_text(f"<b><blockquote>Abhi Humne Premium Start nahi kiya hai...</blockquote></b>")
 
 @Client.on_message(filters.command("add_premium") & filters.user(ADMINS))
 async def give_premium_cmd_handler(client, message):
@@ -113,6 +113,6 @@ async def allplan(bot, message):
 ° 2 Month Plan : 100₹
 ° 3 Month  Plan : 150₹
 
-📌 Note: Payment ke bad is Bot me Screenshot send kare or reply ka wait kare Kiyuki (Admin Busy ho skte he !) Apna Plan Check Karein - /myplan</b></blockquote>""",
+📌 Note: Ab Tak premium Start hua nahi hai, Apna Plan Check Karein - /myplan</b></blockquote>""",
         reply_markup=InlineKeyboardMarkup(btn)
     )
