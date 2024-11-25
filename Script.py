@@ -204,7 +204,7 @@ https://graph.org/Request-Format-02-22-2"""
 
 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 <b>: {}</b>"""
 
-    CAPTION = """<b><a href="https://t.me/+X1AIxA7VsBViZmZl">{file_caption}</a> \n ➥ ᒍ𝗢𝗜ᑎ: @thewarriorsreal</b>"""
+    CAPTION = """<b><a href="https://t.me/+X1AIxA7VsBViZmZl">{file_caption}</a></b>"""
 
     IMDB_TEMPLATE_TXT = """
 <b><blockquote>
