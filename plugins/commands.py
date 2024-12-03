@@ -282,8 +282,6 @@ async def start(client, message):
                 btn = [[
                     InlineKeyboardButton("Vᴇʀɪғʏ", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=", file_id)),
                     InlineKeyboardButton("Hᴏᴡ Tᴏ Vᴇʀɪғʏ", url=HOW_TO_VERIFY)
-                ],[
-            InlineKeyboardButton("Support Group", url=f"https://t.me/queries369")
           ]]
                 await message.reply_text(
                     text="<b>हर 1 दिन में 10 सेकंड का वेरिफिकेशन \nजरूरी हे !\n\nJust 10 second Bro 🥲\n\nAfter then Get Unlimited Movies...✅</b>",
@@ -335,8 +333,6 @@ async def start(client, message):
         btn = [[
             InlineKeyboardButton("Vᴇʀɪғʏ", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=", file_id)),
             InlineKeyboardButton("Hᴏᴡ Tᴏ Vᴇʀɪғʏ", url=HOW_TO_VERIFY)
-        ],[
-            InlineKeyboardButton("Support Group", url=f"https://t.me/queries369")
           ]]
         await message.reply_text(
             text="<b>हर दो दिन में 10 सेकंड का वेरिफिकेशन \nजरूरी हे !\n\nJust 10 second Bro 🥲\n\nAfter then Get Unlimited Movies...✅</b>",
