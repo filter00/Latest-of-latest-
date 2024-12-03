@@ -972,8 +972,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         btn = [[
             InlineKeyboardButton("Vᴇʀɪғʏ", url=await get_token(bot, userid, f"https://telegram.me/{temp.U_NAME}?start=", 'send_all')),
             InlineKeyboardButton("Hᴏᴡ Tᴏ Vᴇʀɪғʏ", url=HOW_TO_VERIFY)
-        ],[
-            InlineKeyboardButton("Support Group", url=f"https://t.me/queries369")
           ]]
                         await client.send_message(
                             chat_id=query.from_user.id,
@@ -1047,8 +1045,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             btn = [[
                 InlineKeyboardButton("Vᴇʀɪғʏ", url=await get_token(client, query.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=", file_id)),
                 InlineKeyboardButton("Hᴏᴡ Tᴏ Vᴇʀɪғʏ", url=HOW_TO_VERIFY)
-            ],[
-            InlineKeyboardButton("Support Group", url=f"https://t.me/queries369")
           ]]
             await client.send_message(
                 chat_id=query.from_user.id,
@@ -1402,7 +1398,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇs •', url=CHNL_LNK),
                     InlineKeyboardButton('• Gʀᴏᴜᴘ •', url=GRP_LNK)
                 ],[
-                    InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/+W1E1qaQuk2I5OWU9')
+                    InlineKeyboardButton('🍁 ʙᴀᴄᴋᴜᴘ ᴄʜᴀɴɴᴇʟ 🍁', url='https://t.me/+X1AIxA7VsBViZmZl')
                     ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
