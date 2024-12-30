@@ -52,16 +52,16 @@ premium = environ.get('PREMIUM_LOGS', '-1001424329361')
 PREMIUM_LOGS = int(premium) if premium and id_pattern.search(premium) else None
 
 IMPORT_JK_SITE = environ.get('IMPORT_JK_SITE', 'shortxlinks.com')
-IMPORT_JK_API = environ.get('IMPORT_JK_API', 'a7b656b6e82f73e15b49ebe1dfe2761c8eb5cfbf')
+IMPORT_JK_API = environ.get('IMPORT_JK_API', '615f8ae00dc24cbb5f55fc88e30b99fe8e27ad0a')
 SHORT_MODE = is_enabled((environ.get("SHORT_MODE","False")), False)
 
 # Others
 IS_VERIFY = is_enabled((environ.get('IS_VERIFY', 'True')), False)
 HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', "https://t.me/tutorialcoa")
 VERIFY2_URL = environ.get('VERIFY2_URL', "shortxlinks.com")
-VERIFY2_API = environ.get('VERIFY2_API', "a7b656b6e82f73e15b49ebe1dfe2761c8eb5cfbf")
+VERIFY2_API = environ.get('VERIFY2_API', "615f8ae00dc24cbb5f55fc88e30b99fe8e27ad0a")
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'shortxlinks.com')
-SHORTLINK_API = environ.get('SHORTLINK_API', 'a7b656b6e82f73e15b49ebe1dfe2761c8eb5cfbf')
+SHORTLINK_API = environ.get('SHORTLINK_API', '615f8ae00dc24cbb5f55fc88e30b99fe8e27ad0a')
 IS_SHORTLINK = is_enabled((environ.get('IS_SHORTLINK', 'False')), False)
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "8")
