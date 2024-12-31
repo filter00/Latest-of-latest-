@@ -91,28 +91,17 @@ async def give_premium_cmd_handler(client, message):
 #         reply_markup=InlineKeyboardMarkup(btn)
 #     )
 
-@Client.on_message(filters.private & filters.command("premium"))
+@Client.on_message(filters.private & filters.command("coa"))
 async def allplan(bot, message):
     btn = [[
             InlineKeyboardButton('📸 sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ 📸', url="https://t.me/coa400_bot")
         ],[
-            InlineKeyboardButton('☘️ ꜰᴜᴛᴜʀᴇ', url="https://envs.sh/jo3.jpg"),
+            InlineKeyboardButton('☘️ ꜰᴜᴛᴜʀᴇ', url="https://te.legra.ph/file/c87368e69e9220d1b5c0a-0997a9769f10c11e34.jpg"),
             InlineKeyboardButton('cʟᴏꜱᴇ ❌', callback_data='close_data')
         ]]
     await message.reply_photo(
-        photo="https://envs.sh/jo3.jpg",
-        caption="""<blockquote><b>💫 Premium Features For Bot
-
-∆ Premium Lene Se Verification ki koi jarurat nahi! haa koi jarurat nahi!
-∆ Direct File milega
-∆ Unlimited Request Kar Sakte Ho
-
-🍀 Premium Price 
-
-° 1 Month Plan : 50₹
-° 2 Month Plan : 100₹
-° 3 Month  Plan : 150₹
-
-📌 Note: Ab Tak premium Start hua nahi hai, Apna Plan Check Karein - /myplan</b></blockquote>""",
+        photo="https://te.legra.ph/file/c87368e69e9220d1b5c0a-0997a9769f10c11e34.jpg",
+        caption="""<blockquote><b>
+📌 Note: Ab Tak premium Start hua nahi hai, Apna Plan Check Karein. kisi aur ko payment mat karo.</b></blockquote>""",
         reply_markup=InlineKeyboardMarkup(btn)
     )
