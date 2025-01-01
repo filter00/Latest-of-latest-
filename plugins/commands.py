@@ -249,27 +249,19 @@ async def start(client, message):
                 protect_content=True if PROTECT_CONTENT else False
             )
             
-    if data.startswith("thewarriorsreal"):
+    if data.startswith("coa"):
         btn = [[
             InlineKeyboardButton('📸 Send Payment Screenshot 📸', url="https://t.me/coa400_bot")
         ],[
-            InlineKeyboardButton('☘️ Feature', url="https://envs.sh/jo3.jpg"),
+            InlineKeyboardButton('☘️ Feature', url="https://te.legra.ph/file/c87368e69e9220d1b5c0a-0997a9769f10c11e34.jpg"),
             InlineKeyboardButton('Close ❌', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(btn)
         await message.reply_photo(
-        photo="https://envs.sh/jo3.jpg",
-        caption="""<blockquote><b>💫 Premium Features For Bot
-
-∆ Ab Tak start hua nahi hai premium...
-
-🍀 Premium Price 
-
-° 1 Month Plan : 50₹
-° 2 Month Plan : 100₹
-° 3 Month  Plan : 150₹
-
-📌 Note: Payment ke bad is Bot me Screenshot send kare or reply ka wait kare Kiyuki (Admin Busy ho skte he !) Apna Plan Check Karein - /myplan</b></blockquote>""",
+        photo="https://te.legra.ph/file/c87368e69e9220d1b5c0a-0997a9769f10c11e34.jpg",
+        caption="""<blockquote><b>
+📌 Note: Ab Tak premium Start hua nahi hai, Apna Plan Check Karein. kisi aur ko payment mat karo.</b></blockquote>""",
+        reply_markup=InlineKeyboardMarkup(btn)</b></blockquote>""",
             reply_markup=reply_markup
         )
         return
