@@ -259,8 +259,7 @@ async def start(client, message):
         reply_markup = InlineKeyboardMarkup(btn)
         await message.reply_photo(
         photo="https://te.legra.ph/file/c87368e69e9220d1b5c0a-0997a9769f10c11e34.jpg",
-        caption="""<blockquote><b>
-📌 Note: Ab Tak premium Start hua nahi hai, Apna Plan Check Karein. kisi aur ko payment mat karo.</b></blockquote>""",
+        caption="""<blockquote><b>📌 Note: Ab Tak premium Start hua nahi hai, Apna Plan Check Karein. kisi aur ko payment mat karo.</b></blockquote>""",
         reply_markup=InlineKeyboardMarkup(btn)</b></blockquote>""",
             reply_markup=reply_markup
         )
