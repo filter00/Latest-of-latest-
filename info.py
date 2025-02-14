@@ -56,7 +56,7 @@ IMPORT_JK_API = environ.get('IMPORT_JK_API', '615f8ae00dc24cbb5f55fc88e30b99fe8e
 SHORT_MODE = is_enabled((environ.get("SHORT_MODE","False")), False)
 
 # Others
-IS_VERIFY = is_enabled((environ.get('IS_VERIFY', 'True')), False)
+IS_VERIFY = is_enabled((environ.get('IS_VERIFY', 'False')), False)
 HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', "https://t.me/tutorialcoa")
 VERIFY2_URL = environ.get('VERIFY2_URL', "shortxlinks.com")
 VERIFY2_API = environ.get('VERIFY2_API', "615f8ae00dc24cbb5f55fc88e30b99fe8e27ad0a")
