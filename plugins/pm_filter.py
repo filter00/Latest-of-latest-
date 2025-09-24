@@ -2112,7 +2112,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>ʏᴏᴜʀ ʀᴇꜱᴜʟᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ꜰᴏʀ {search}</b>"
+        cap = f"<b>𝗛𝗲𝗿𝗲 𝗔𝗿𝗲 𝗟𝗶𝘀𝘁 𝗢𝗳 𝗙𝗶𝗹𝗲𝘀 {search}</b>"
     CAP[search] = cap
     if imdb and imdb.get('poster'):
         try:
