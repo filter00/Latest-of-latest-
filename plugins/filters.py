@@ -109,18 +109,17 @@ async def addfilter(client, message):
 
     await add_filter(grp_id, text, reply_text, btn, fileid, alert)
 
-       sent_msg = await message.reply_text(
-       f"Filter for  {text}  added in  {title}",
-       quote=True,
-       parse_mode=enums.ParseMode.MARKDOWN
-   )
-   import asyncio  # file ke start mein ya kahin import karna zaruri hai
+sent_msg = await message.reply_text(
+    f"Filter for  {text}  added in  {title}",
+    quote=True,
+    parse_mode=enums.ParseMode.MARKDOWN
+)
 
-   await asyncio.sleep(60)  # 60 seconds ke liye ruk jao
-   try:
-       await sent_msg.delete()  # reply message delete karo
-   except Exception:
-       pass  # agar koi error aaye toh ignore kar do
+await asyncio.sleep(60)
+try:
+    await sent_msg.delete()
+except Exception:
+    pass
 
 @Client.on_message(filters.command(['viewfilters', 'filters']) & filters.incoming)
 async def get_all(client, message):
