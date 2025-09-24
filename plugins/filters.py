@@ -106,7 +106,7 @@ async def addfilter(client, message):
             alert = None
     else:
         return
-       
+@Client.on_message(filters.command("addfilter"))     
 async def addfilter_handler(client, message):
     # filter add karne ke liye async function ko call karo
     await add_filter(grp_id, text, reply_text, btn, fileid, alert)
