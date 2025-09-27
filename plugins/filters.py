@@ -106,9 +106,16 @@ async def addfilter(client, message):
             alert = None
     else:
         return
-@Client.on_message(filters.command("addfilter"))     
+@Client.on_message(filters.command("addfilter"))
 async def addfilter_handler(client, message):
-    # filter add karne ke liye async function ko call karo
+    grp_id = message.chat.id
+    text = "example"
+    reply_text = "some reply"
+    btn = []
+    fileid = None
+    alert = None
+    title = message.chat.title
+
     await add_filter(grp_id, text, reply_text, btn, fileid, alert)
 
     sent_msg = await message.reply_text(
@@ -117,9 +124,9 @@ async def addfilter_handler(client, message):
         parse_mode=enums.ParseMode.MARKDOWN
     )
 
-    await asyncio.sleep(60)  # 60 seconds delay non-blocking
+    await asyncio.sleep(25)
     try:
-        await sent_msg.delete()  # message delete karo
+        await sent_msg.delete()
     except Exception:
         pass
 
