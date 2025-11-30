@@ -21,7 +21,9 @@ async def _resolve_group(client, message):
     """
     userid = message.from_user.id if message.from_user else None
     if not userid:
-        await message.reply_text(f"You are anonymous admin. Use /connect {message.chat.id} in PM")
+        await message.reply_text(
+            f"You are anonymous admin. Use /connect {message.chat.id} in PM"
+        )
         return None, None, None
 
     chat_type = message.chat.type
@@ -109,6 +111,8 @@ async def addfilter(client, message):
     keyword = None
     reply_text = None
     btn = None
+    fileid = None
+    alert = None
 
     if is_reply:
         # /filter keyword as reply to message
@@ -130,16 +134,26 @@ async def addfilter(client, message):
             reply_text = ""
 
         fileid = get_file_id(replied)
-        if fileid:
-            reply_text += f"\n#MEDIA_ID:{fileid}"
+
     else:
         # Normal usage: /filter keyword reply
         # We'll allow quotes+buttons or just plain text
         extracted = split_quotes(text)
-        if isinstance(extracted, list) and len(extracted) >= 2:
+        if isinstance(extracted, (list, tuple)) and len(extracted) >= 2:
             # keyword, reply(+buttons)
             keyword = extracted[0].lower()
-            reply_text, btn = parser(extracted[1])
+            parsed = parser(extracted[1])
+
+            # parser may return (reply, btn) or (reply, btn, alert)
+            if isinstance(parsed, (list, tuple)):
+                if len(parsed) == 3:
+                    reply_text, btn, alert = parsed
+                elif len(parsed) == 2:
+                    reply_text, btn = parsed
+                elif len(parsed) == 1:
+                    reply_text = parsed[0]
+            else:
+                reply_text = parsed
         else:
             # no quotes, simple space split
             parts = text.split(None, 1)
@@ -157,10 +171,12 @@ async def addfilter(client, message):
         await message.reply_text("Keyword parse issue. Try again.", quote=True)
         return
 
-    if btn:
-        reply_text += f"\n{btn}"
+    if reply_text is None:
+        await message.reply_text("Reply text missing. Try again.", quote=True)
+        return
 
-    await add_filter(grp_id, keyword, reply_text)
+    # store filter in DB (filters_mdb.add_filter expects: grp_id, text, reply_text, btn, file, alert)
+    await add_filter(grp_id, keyword, reply_text, btn, fileid, alert)
 
     await message.reply_text(
         f"Added filter `{keyword}` in **{title}**",
@@ -196,8 +212,9 @@ async def get_all(_, message):
 
     msg = f"Total {count} filters in **{title}**:\n"
 
-    async for filt in filters_list:
-        msg += f"• `{filt['keyword']}`\n"
+    # get_filters returns a list of text strings
+    for text in filters_list:
+        msg += f"• `{text}`\n"
 
     await message.reply_text(
         msg,
@@ -235,15 +252,15 @@ async def deletefilter(client, message):
         )
         return
 
-    query = text.lower()
-    # Yahan main change kiya: pehle grp_id, query tha; ab query, grp_id hai
+    query = text.strip().lower()
+    if not query:
+        await message.reply_text("Filter name khali mat chhodo!", quote=True)
+        return
+
     try:
-        await delete_filter(query, grp_id)
-        await message.reply_text(
-            f"Deleted filter `{query}` from **{title}**",
-            quote=True,
-            parse_mode=enums.ParseMode.MARKDOWN
-        )
+        # filters_mdb.delete_filter expects: (message, text, group_id)
+        await delete_filter(message, query, grp_id)
+        # Success / not-found ka reply DB wala function khud bhej deta hai
     except Exception as e:
         await message.reply_text(f"Failed to delete filter: {e}", quote=True)
 
