@@ -1,4 +1,3 @@
-
 import io
 import asyncio
 from pyrogram import filters, Client, enums
@@ -36,7 +35,7 @@ async def _resolve_group(client, message):
             title = chat.title
             return grpid, title, userid
         except Exception:
-            await message.reply_text("Make sure I'm present in your group!!", quote=True)
+            await message.reply_text("Unable to resolve connected group!", quote=True)
             return None, None, None
 
     elif chat_type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
@@ -53,15 +52,16 @@ async def addfilter(client, message):
     - Either /filter <keyword> "<reply with optional button spec>" OR
     - Reply to any message with: /filter <keyword>
     """
+
     grp_id, title, userid = await _resolve_group(client, message)
     if not grp_id:
         return
 
-    # Check admin/owner
     try:
         st = await client.get_chat_member(grp_id, userid)
     except Exception:
         return
+
     if (
         st.status != enums.ChatMemberStatus.ADMINISTRATOR
         and st.status != enums.ChatMemberStatus.OWNER
@@ -69,161 +69,138 @@ async def addfilter(client, message):
     ):
         return
 
-    # Parse command args
-    if not message.text:
-        await message.reply_text("Command Incomplete :(", quote=True)
+    # Parse arguments
+    is_reply = False
+    replied = message.reply_to_message
+    if replied:
+        is_reply = True
+
+    if len(message.text.split()) < 2:
+        await message.reply_text(
+            "Usage:\n"
+            "`/filter keyword reply text`\n\n"
+            "Or reply to a message with:\n"
+            "`/filter keyword`",
+            quote=True,
+            parse_mode=enums.ParseMode.MARKDOWN,
+        )
         return
 
-    args = message.text.split(None, 1)
-    if len(args) < 2:
-        await message.reply_text("Command Incomplete :(", quote=True)
-        return
-
-    extracted = split_quotes(args[1])
-    text = extracted[0].lower()
-
-    # If no reply_to_message and no content provided in quotes
-    if not message.reply_to_message and len(extracted) < 2:
-        await message.reply_text("Add some content to save your filter!", quote=True)
-        return
-
-    # Initialize
-    reply_text = ""
-    btn = "[]"
-    fileid = None
-    alert = None
-
-    # Case: content provided directly as argument (with possible button spec)
-    if (len(extracted) >= 2) and not message.reply_to_message:
-        reply_text, btn, alert = parser(extracted[1], text)
-        if not reply_text:
-            await message.reply_text("You cannot have buttons alone, give some text to go with it!", quote=True)
+    # Split out keyword and (optional) text/buttons
+    try:
+        cmd, *rest = message.text.split(" ", 1)
+        if not rest:
+            await message.reply_text(
+                "Provide a keyword along with reply, or reply to a message.",
+                quote=True,
+                parse_mode=enums.ParseMode.MARKDOWN,
+            )
             return
+        text = rest[0]
+    except Exception:
+        await message.reply_text(
+            "Provide a keyword along with reply, or reply to a message.",
+            quote=True,
+            parse_mode=enums.ParseMode.MARKDOWN,
+        )
+        return
 
-    # Case: user replied to a message which contains inline buttons
-    elif message.reply_to_message and message.reply_to_message.reply_markup:
-        try:
-            rm = message.reply_to_message.reply_markup
-            btn = rm.inline_keyboard
-            msg_file = get_file_id(message.reply_to_message)
-            if msg_file:
-                fileid = msg_file.file_id
-                # prefer caption if present, else try text
-                reply_text = message.reply_to_message.caption or ""
-            else:
-                reply_text = message.reply_to_message.text or ""
-                fileid = None
-            alert = None
-        except Exception:
+    # If using quotes + button parser
+    keyword = None
+    reply_text = None
+    btn = None
+
+    if is_reply:
+        # /filter keyword as reply to message
+        parts = text.split(None, 1)
+        if len(parts) < 1:
+            await message.reply_text(
+                "You must specify a keyword!",
+                quote=True
+            )
+            return
+        keyword = parts[0].strip().lower()
+
+        # The replied message content becomes the reply_text
+        if replied.text:
+            reply_text = replied.text
+        elif replied.caption:
+            reply_text = replied.caption
+        else:
             reply_text = ""
-            btn = "[]"
-            fileid = None
-            alert = None
 
-    # Case: replied message has media (photo, video, sticker, etc.)
-    elif message.reply_to_message and message.reply_to_message.media:
-        try:
-            msg_file = get_file_id(message.reply_to_message)
-            fileid = msg_file.file_id if msg_file else None
-
-            # For stickers, parser might not be needed — keep behavior similar to original:
-            if message.reply_to_message.sticker:
-                # use provided extracted[1] if available as button spec else keep caption
-                if len(extracted) >= 2:
-                    reply_text, btn, alert = parser(extracted[1], text)
-                else:
-                    reply_text = message.reply_to_message.caption or ""
-                    btn = "[]"
-                    alert = None
-            else:
-                # Non-sticker media — try caption with parser (if provided)
-                # If caption exists and contains button spec, use parser on caption
-                if message.reply_to_message.caption:
-                    reply_text, btn, alert = parser(message.reply_to_message.caption, text)
-                else:
-                    reply_text = ""
-                    btn = "[]"
-                    alert = None
-        except Exception:
-            reply_text = ""
-            btn = "[]"
-            fileid = None
-            alert = None
-
-    # Case: replied message is plain text
-    elif message.reply_to_message and message.reply_to_message.text:
-        try:
-            fileid = None
-            reply_text, btn, alert = parser(message.reply_to_message.text, text)
-        except Exception:
-            reply_text = ""
-            btn = "[]"
-            alert = None
-
+        fileid = get_file_id(replied)
+        if fileid:
+            reply_text += f"\n#MEDIA_ID:{fileid}"
     else:
-        # Unexpected case
-        return
-
-    # At this point we have: grp_id, text (keyword), reply_text, btn, fileid, alert
-    # Save to DB. Ensure the signature of add_filter matches:
-    # assumed: add_filter(grp_id, keyword, reply_text, buttons, file_id, alert)
-    try:
-        await add_filter(grp_id, text, reply_text, btn, fileid, alert)
-    except Exception as e:
-        await message.reply_text(f"Failed to add filter: {e}", quote=True)
-        return
-
-    sent_msg = await message.reply_text(
-        f"Filter for {text} added in {title}",
-        quote=True,
-        parse_mode=enums.ParseMode.MARKDOWN
-    )
-
-    await asyncio.sleep(25)
-    try:
-        await sent_msg.delete()
-    except Exception:
-        pass
-
-
-@Client.on_message(filters.command(['viewfilters', 'filters']) & filters.incoming)
-async def get_all(client, message):
-    grp_id, title, userid = await _resolve_group(client, message)
-    if not grp_id:
-        return
-
-    try:
-        st = await client.get_chat_member(grp_id, userid)
-    except Exception:
-        return
-    if (
-        st.status != enums.ChatMemberStatus.ADMINISTRATOR
-        and st.status != enums.ChatMemberStatus.OWNER
-        and str(userid) not in ADMINS
-    ):
-        return
-
-    texts = await get_filters(grp_id)
-    count = await count_filters(grp_id)
-    if count:
-        filterlist = f"Total number of filters in **{title}** : {count}\n\n"
-        for kw in texts:
-            # texts assumed to be iterable of keywords or dict keys
-            filterlist += " ×  `{}`\n".format(kw)
-
-        if len(filterlist) > 4096:
-            with io.BytesIO(str.encode(filterlist.replace("`", ""))) as keyword_file:
-                keyword_file.name = "keywords.txt"
-                await message.reply_document(
-                    document=keyword_file,
-                    quote=True
+        # Normal usage: /filter keyword reply
+        # We'll allow quotes+buttons or just plain text
+        extracted = split_quotes(text)
+        if isinstance(extracted, list) and len(extracted) >= 2:
+            # keyword, reply(+buttons)
+            keyword = extracted[0].lower()
+            reply_text, btn = parser(extracted[1])
+        else:
+            # no quotes, simple space split
+            parts = text.split(None, 1)
+            if len(parts) < 2:
+                await message.reply_text(
+                    "Usage: `/filter keyword reply text`",
+                    quote=True,
+                    parse_mode=enums.ParseMode.MARKDOWN,
                 )
-            return
-    else:
-        filterlist = f"There are no active filters in **{title}**"
+                return
+            keyword = parts[0].lower()
+            reply_text = parts[1]
+
+    if not keyword:
+        await message.reply_text("Keyword parse issue. Try again.", quote=True)
+        return
+
+    if btn:
+        reply_text += f"\n{btn}"
+
+    await add_filter(grp_id, keyword, reply_text)
 
     await message.reply_text(
-        text=filterlist,
+        f"Added filter `{keyword}` in **{title}**",
+        quote=True,
+        parse_mode=enums.ParseMode.MARKDOWN,
+    )
+
+
+@Client.on_message(filters.command('viewfilters') & filters.incoming)
+async def get_all(_, message):
+    userid = message.from_user.id if message.from_user else None
+    if not userid:
+        return
+
+    chat_type = message.chat.type
+
+    if chat_type == enums.ChatType.PRIVATE:
+        grp_id = await active_connection(str(userid))
+        if not grp_id:
+            await message.reply_text("I'm not connected to any groups!", quote=True)
+            return
+        title = (await _.get_chat(grp_id)).title
+    else:
+        grp_id = message.chat.id
+        title = message.chat.title
+
+    filters_list = await get_filters(grp_id)
+    count = await count_filters(grp_id)
+
+    if not count:
+        await message.reply_text(f"There are no filters in **{title}**", quote=True)
+        return
+
+    msg = f"Total {count} filters in **{title}**:\n"
+
+    async for filt in filters_list:
+        msg += f"• `{filt['keyword']}`\n"
+
+    await message.reply_text(
+        msg,
         quote=True,
         parse_mode=enums.ParseMode.MARKDOWN
     )
@@ -246,6 +223,7 @@ async def deletefilter(client, message):
     ):
         return
 
+    # Command parsing
     try:
         cmd, text = message.text.split(" ", 1)
     except Exception:
@@ -258,10 +236,14 @@ async def deletefilter(client, message):
         return
 
     query = text.lower()
-    # Adjust delete_filter signature if needed. Here assumed: delete_filter(grp_id, keyword)
+    # Yahan main change kiya: pehle grp_id, query tha; ab query, grp_id hai
     try:
-        await delete_filter(grp_id, query)
-        await message.reply_text(f"Deleted filter `{query}` from **{title}**", quote=True, parse_mode=enums.ParseMode.MARKDOWN)
+        await delete_filter(query, grp_id)
+        await message.reply_text(
+            f"Deleted filter `{query}` from **{title}**",
+            quote=True,
+            parse_mode=enums.ParseMode.MARKDOWN
+        )
     except Exception as e:
         await message.reply_text(f"Failed to delete filter: {e}", quote=True)
 
@@ -285,5 +267,4 @@ async def delallconfirm(client, message):
                 [InlineKeyboardButton(text="CANCEL", callback_data="delallcancel")]
             ]),
             quote=True
-                   )
-       
+        )
